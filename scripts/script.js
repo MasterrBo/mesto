@@ -17,4 +17,4 @@ function closeMessage() {
 }
 
 
-// element.classList.add (name); name.
+//
