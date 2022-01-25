@@ -21,7 +21,7 @@
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button class="button button_edit" onclick="showMessage();">
+              <button class="button button_edit" onclick="openPopup();">
                 <img src="./images/Edit_Button.svg">
               </button>
             </div>
@@ -95,16 +95,19 @@
 
       <section class="popup" id="ID_popup">
         <div class="popup__wrap">
-          <button class="popup__close" onclick="closeMessage();"> 
+          <button class="popup__close" onclick="closePopup();"> 
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму">
           </button>
 
         <form class="popup__container">
- 
-          <h3 class="popup__title">Редактировать профиль</h3>
+          <div class="popup__content">
+          
+            <h3 class="popup__title">Редактировать профиль</h3>
           <input type="text" class="popup__name-field" value="Жак-Ив Кусто">
           <input type="text" class="popup__job-field" value="Исследователь океана">
-          <button type="submit" class="popup__submit-button">Сохранить</button>
+          <button type="submit" class="popup__submit-button"><span class="popup__button-text">Сохранить</span></button>
+        
+        </div>
         </form>
 
       </div>

@@ -7,14 +7,23 @@
 
 
 
-function showMessage() {
+function openPopup() {
   document.getElementById('ID_popup').classList.add('popup_activ');
 }
 
-
-function closeMessage() {
+function closePopup() {
   document.getElementById('ID_popup').classList.remove('popup_activ');
 }
 
+profileButtonEdit.addEventListener('click', openPopup);
+profileButtonClose.addEventListener('click', closePopup);
 
-//
+
+
+
+
+// function closePopup() {
+//   popap.classList.remove('popup__opened);
+// }
+
+
