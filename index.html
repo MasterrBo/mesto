@@ -10,22 +10,30 @@
     <div class="page">
 
       <header class="header">
-        <a href="#"><img class="header__logo" src="./images/logo.svg" alt="Логотип" /></a>
+        <a href="#" class="header__logo_link"><img class="header__logo" src="./images/logo.svg" alt="Логотип" /></a>
       </header>
       <main class="content">
 
         <section class="profile">
-          <div class="profile__avatar">
+            <img src="./images/kusto.png" class="profile__avatar">
 
-          </div>
 
           <div class="profile__info">
+            <div class="profile__content">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="button button_edit" onclick="showMessage();">
+                <img src="./images/Edit_Button.svg">
+              </button>
+            </div>
 
+            <p class="profile__post">Исследователь океана</p>
           </div>
 
-          <div class="profile__add-buttton">
 
-          </div>
+          <button class="profile__add-button">
+            <img class="profile__add-icon" src="./images/add-button.svg" alt="Добавить инфо">
+          </button>
+
         </section>
 
         <section class="elements">
@@ -85,18 +93,27 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
-      <section class="popup">
+      <section class="popup" id="ID_popup">
+        <div class="popup__wrap">
+          <button class="popup__close" onclick="closeMessage();"> 
+            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму">
+          </button>
+
         <form class="popup__container">
-          <button class="popup__close-button">
-            
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму"></button>
+ 
           <h3 class="popup__title">Редактировать профиль</h3>
           <input type="text" class="popup__name-field" value="Жак-Ив Кусто">
           <input type="text" class="popup__job-field" value="Исследователь океана">
           <button type="submit" class="popup__submit-button">Сохранить</button>
         </form>
+
+      </div>
       </section>
 
+
     </div>
+    <script src="scripts/script.js">
+
+    </script>
   </body>
 </html>
