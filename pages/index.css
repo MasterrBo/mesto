@@ -166,6 +166,7 @@
 
 .popup {
   margin-bottom: 150px;
+  position: fixed;
 }
 
 .popup__container {
@@ -261,7 +262,6 @@
   padding: 0;
 }
 
-
 .header__logo_link {
   margin: 0;
   padding: 0;
@@ -307,7 +307,7 @@
  font-weight: 400;
 }
 
-.popup__submit-button {
+.popup__close-button {
   margin: 42px 0 0;
   border: none;
   width: 358px;
