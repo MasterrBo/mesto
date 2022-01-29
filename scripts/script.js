@@ -1,8 +1,8 @@
 
-let profileAddButton = document.querySelector(".profile__add-button");
+let profileAddButton = document.querySelector(".button_edit");
 let popupCloseButton = document.querySelector(".popup__close-button");
 let popup = document.querySelector(".popup");
-// let popupSaveButton = document.querySelector(".popup__close-button");
+let popupSaveButton = document.querySelector(".popup__save");
 
 function openPopup() {
   document.getElementById("ID_popup").classList.add("popup_activ");
@@ -38,12 +38,6 @@ function formSubmitHandler(evt) {
 
 formElement.addEventListener("submit", formSubmitHandler);
 popupSaveButton.addEventListener("click", closePopup);
-
-popup.addEventListener("click", function (event) {
-  if (event.defaultPrevented) {
-    closePopup();
-  }
-});
 
 
 
