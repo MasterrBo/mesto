@@ -1,16 +1,17 @@
 
-let profileAddButton = document.querySelector(".button_edit");
+let profileAddButton = document.querySelector(".profile__edit-button");
 let popupCloseButton = document.querySelector(".popup__close-button");
 let popup = document.querySelector(".popup");
 let popupSaveButton = document.querySelector(".popup__save");
 
 function openPopup() {
-  document.getElementById("ID_popup").classList.add("popup_activ");
+  document.getElementById("popup__id").classList.add("popup_opened");
 }
 
 function closePopup() {
-  document.getElementById("ID_popup").classList.remove("popup_activ");
+  document.getElementById("popup__id").classList.remove("popup_opened");
 }
+
 
 profileAddButton.addEventListener('click', openPopup);
 popupCloseButton.addEventListener('click', closePopup);

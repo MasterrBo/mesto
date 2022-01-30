@@ -1,0 +1,12 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000a3;
+  display: none; /* flex: ; */
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+}

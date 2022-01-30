@@ -8,113 +8,103 @@
   </head>
   <body class="big-page">
     <div class="page">
-
       <header class="header">
         <a href="#" class="header__logo_link"><img class="header__logo" src="./images/logo.svg" alt="Логотип" /></a>
       </header>
+
       <main class="content">
-
         <section class="profile">
-            <img src="./images/kusto.png" class="profile__avatar">
-
+          <img src="./images/kusto.png" class="profile__avatar" alt="Ваше фото"/>
 
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button type="button" class="button_edit" onclick="openPopup();">
-                <img src="./images/Edit_Button.svg" class="button_sm">
+              <button type="button" class="profile__edit-button">
+                <img class="profile__edit-icon" src="./images/Edit_Button.svg" alt="Редактировать карточку"/>
               </button>
             </div>
             <p class="profile__post">Исследователь океана</p>
           </div>
 
           <button type="button" class="profile__add-button">
-            <img class="profile__add-icon" src="./images/add-button.svg" alt="Добавить инфо">
+            <img class="profile__add-icon" src="./images/add-button.svg" alt="Добавить инфо" />
           </button>
-
         </section>
 
         <section class="elements">
           <article class="element">
-            <img class="element__photo" src="./images/karachaevsk.png" alt="Карачаевск фото"/>
+            <img class="element__photo" src="./images/karachaevsk.png" alt="Карачаевск фото" />
             <div class="element__content">
-             <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Карачаевск</h2>
               <button class="element__button" type="button" aria-label="Лайкнуть"></button>
-            </div>    
+            </div>
           </article>
 
           <article class="element">
-            <img class="element__photo" src="./images/elbrus.png" alt="Гора Эльбрус"/>
+            <img class="element__photo" src="./images/elbrus.png" alt="Гора Эльбрус" />
             <div class="element__content">
-             <h2 class="element__title">Гора Эльбрус</h2>
+              <h2 class="element__title">Гора Эльбрус</h2>
               <button class="element__button" type="button" aria-label="Лайкнуть"></button>
-            </div>    
+            </div>
           </article>
 
           <article class="element">
-            <img class="element__photo" src="./images/dombay.png" alt="Домбай"/>
+            <img class="element__photo" src="./images/dombay.png" alt="Домбай" />
             <div class="element__content">
-             <h2 class="element__title">Домбай</h2>
+              <h2 class="element__title">Домбай</h2>
               <button class="element__button" type="button" aria-label="Лайкнуть"></button>
-            </div>    
+            </div>
           </article>
 
           <article class="element">
-            <img class="element__photo" src="./images/elbrus.png" alt="Гора Эльбрус"/>
+            <img class="element__photo" src="./images/elbrus.png" alt="Гора Эльбрус" />
             <div class="element__content">
-             <h2 class="element__title">Гора Эльбрус</h2>
+              <h2 class="element__title">Гора Эльбрус</h2>
               <button class="element__button" type="button" aria-label="Лайкнуть"></button>
-            </div>    
+            </div>
           </article>
 
           <article class="element">
-            <img class="element__photo" src="./images/dombay.png" alt="Домбай"/>
+            <img class="element__photo" src="./images/dombay.png" alt="Домбай" />
             <div class="element__content">
-             <h2 class="element__title">Домбай</h2>
+              <h2 class="element__title">Домбай</h2>
               <button class="element__button" type="button" aria-label="Лайкнуть"></button>
-            </div>    
+            </div>
           </article>
-
 
           <article class="element">
-            <img class="element__photo" src="./images/karachaevsk.png" alt="Карачаево-Черкесия"/>
+            <img class="element__photo" src="./images/karachaevsk.png" alt="Карачаево-Черкесия" />
             <div class="element__content">
-             <h2 class="element__title">Карачаево-Черкесия</h2>
+              <h2 class="element__title">Карачаево-Черкесия</h2>
               <button class="element__button" type="button" aria-label="Лайкнуть"></button>
-            </div>    
+            </div>
           </article>
-
         </section>
-
       </main>
+
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
-      <section class="popup" id="ID_popup">
+      <section class="popup" id="popup__id">
         <div class="popup__wrap">
-          <button type="button" class="popup__close-button" onclick="closePopup();"> 
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму">
+            <button type="button" class="popup__close-button">  
+            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
-        <form class="popup__container">
-          <div class="popup__content">
-          
-          <h3 class="popup__title">Редактировать профиль</h3>
-          
-          <input type="text" class="popup__name-field" id="name" value="Жак-Ив Кусто">
-          <input type="text" class="popup__job-field" id="job" value="Исследователь океана" placeholder="Жак-Ив Кусто">
-          
-          <button type="submit" class="popup__save"><span class="popup__button-text">Сохранить</span></button>
+          <form class="popup__container">
+            <div class="popup__content">
+              <h3 class="popup__title">Редактировать профиль</h3>
+
+              <input type="text" class="popup__name-field" id="name" value="Жак-Ив Кусто" />
+              <input type="text" class="popup__job-field" id="job" value="Исследователь океана" placeholder="Жак-Ив Кусто" />
+
+              <button type="submit" class="popup__save"><span class="popup__button-text">Сохранить</span></button>
+            </div>
+          </form>
         </div>
-        </form>
-      </div>
       </section>
-
-
     </div>
-    <script src="scripts/script.js">
-
-    </script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>

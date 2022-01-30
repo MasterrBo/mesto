@@ -1,0 +1,18 @@
+
+
+.profile__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 336px;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .profile__info {
+    padding-left: 46px;
+    min-width: 50vw;
+  }
+}
