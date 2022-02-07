@@ -13,9 +13,3 @@
 .element__button:hover {
   opacity: 0.5;
 }
-
-.element__button:active {
-  background-image: url(../../../images/stroke-active.svg);
-  opacity: 1;
-}
-

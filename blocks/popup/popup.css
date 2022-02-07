@@ -4,9 +4,10 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #000000a3;
+  background-color: rgba(0, 0, 0, 0.5);
   display: none; /* flex: ; */
   overflow: auto;
   justify-content: center;
   align-items: center;
 }
+

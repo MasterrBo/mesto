@@ -19,14 +19,14 @@
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button type="button" class="profile__edit-button">
+              <button type="button" aria-label="Редактировать" class="profile__edit-button">
                 <img class="profile__edit-icon" src="./images/Edit_Button.svg" alt="Редактировать карточку"/>
               </button>
             </div>
             <p class="profile__post">Исследователь океана</p>
           </div>
 
-          <button type="button" class="profile__add-button">
+          <button type="button" class="profile__add-button" aria-label="Добавить">
             <img class="profile__add-icon" src="./images/add-button.svg" alt="Добавить инфо" />
           </button>
         </section>
@@ -88,23 +88,21 @@
 
       <section class="popup" id="popup__id">
         <div class="popup__wrap">
-            <button type="button" class="popup__close-button">  
+            <button type="button" class="popup__close-button" aria-label="Закрыть">  
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
-          <form class="popup__container">
-            <div class="popup__content">
+          <form name="form1" class="popup__container">
               <h3 class="popup__title">Редактировать профиль</h3>
 
-              <input type="text" class="popup__name-field" id="name" value="Жак-Ив Кусто" />
-              <input type="text" class="popup__job-field" id="job" value="Исследователь океана" placeholder="Жак-Ив Кусто" />
+              <input type="text" class="popup__field" id="name" value="" placeholder="Жак-Ив Кусто"/>
+              <input type="text" class="popup__field" id="job" value="" placeholder="Исследователь океана" />
 
-              <button type="submit" class="popup__save"><span class="popup__button-text">Сохранить</span></button>
-            </div>
+              <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
           </form>
         </div>
       </section>
     </div>
-    <script src="scripts/script.js"></script>
+    <script src="scripts/index.js"></script>
   </body>
 </html>
