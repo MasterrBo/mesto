@@ -7,6 +7,14 @@
   display: inline-block;
   margin: 0 0 9px 0;
   padding: 0;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 925px) {
+  .profile__title {
+    font-size: 38px;
+    line-height: 42px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -15,3 +23,5 @@
     line-height: 33px;
   }
 }
+
+

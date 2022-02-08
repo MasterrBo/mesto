@@ -7,8 +7,9 @@
 }
 
 
-.popup__close-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0.6;
-  cursor: pointer;
+@media screen and (max-width: 400px) {
+  .popup__close-button {
+    margin-bottom: 8px;
+  }
 }
+

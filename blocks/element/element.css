@@ -11,3 +11,29 @@
   margin: 0 0 20px;
   padding: 0;
 }
+
+@media screen and (max-width: 1259px) {
+.element {
+  width: 255px;
+}
+}
+
+@media screen and (max-width: 1174px) {
+  .element {
+    width: 282px;
+  }
+  }
+  
+@media screen and (max-width: 610px) {
+  .element {
+    width: 255px;
+  }
+  }
+
+  @media screen and (max-width: 599px) {
+    .element {
+      width: 282px;
+    }
+    }
+  
+

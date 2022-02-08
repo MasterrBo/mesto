@@ -10,6 +10,12 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1174px) {
+  .elements {
+    justify-content: space-evenly;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .elements {
     padding: 0 40px;
@@ -22,7 +28,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 599px) {
   .elements {
     margin-top: 36px;
     flex-direction: column;

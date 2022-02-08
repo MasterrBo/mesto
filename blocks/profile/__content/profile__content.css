@@ -11,7 +11,13 @@
     justify-content: center;
     vertical-align: baseline;
     flex-direction: row;
-    margin-top: 22.2px;
+    margin: 22.2px 0 0;
     min-width: 50vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .profile__content {
+   text-align: center;
   }
 }
