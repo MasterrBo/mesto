@@ -6,6 +6,11 @@
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
+@media screen and (max-width: 599px) {
+  .header {
+    padding-left: 30px;
+  }
+}
 @media screen and (max-width: 400px) {
   .header {
     padding: 28px 0 0;
