@@ -6,13 +6,14 @@
   padding: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 599px) {
   .profile__content {
     justify-content: center;
     vertical-align: baseline;
     flex-direction: row;
     margin: 22.2px 0 0;
     min-width: 50vw;
+    text-align: center;
   }
 }
 

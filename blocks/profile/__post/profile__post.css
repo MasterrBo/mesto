@@ -6,11 +6,21 @@
   font-style: normal;
   margin: 0;
   padding: 0;
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  max-width: 90%;
+}
+
+@media screen and (max-width: 599px) {
+  .profile__post {
+    text-align: center;
+    max-width: 100%;
+  }
 }
 
 @media screen and (max-width: 400px) {
   .profile__post {
-    text-align: center;
     font-size: 14px;
     line-height: 17px;
   }

@@ -2,6 +2,7 @@
 .profile__edit-icon {
   width: 24px;
   height: 24px;  
+  margin-bottom: 9px;
 } 
 
 @media screen and (max-width: 400px) {

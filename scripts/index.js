@@ -3,12 +3,7 @@ let profileAddButton = document.querySelector(".profile__edit-button");
 let popupCloseButton = document.querySelector(".popup__close-button");
 let popup = document.querySelector(".popup");
 
-function openPopup() {
-  popup.classList.add("popup_opened");
-}
-
 function closePopup() {
-  //document.getElementById("popup__id").classList.remove("popup_opened");
   popup.classList.remove("popup_opened");
 }
 
@@ -23,6 +18,12 @@ let nameInput = document.getElementById("name");
 let jobInput = document.getElementById("job"); 
 let profileTitle = document.querySelector(".profile__title");
 let profilePost = document.querySelector(".profile__post");
+
+function openPopup() {
+  popup.classList.add("popup_opened");
+  nameInput.value = profileTitle.textContent;
+  jobInput.value = profilePost.textContent;
+}
 
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
