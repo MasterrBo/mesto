@@ -11,9 +11,19 @@
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 650px) {
+  .profile__avatar {
+    width: 90px;
+    height: 90px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 620px) {
   .profile__avatar {
     margin: 0 auto;
     flex-direction: column;
+    width: 120px;
+    height: 120px;
   }
 }

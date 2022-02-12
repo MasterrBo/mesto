@@ -6,19 +6,33 @@
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 650px) {
   .header {
-    padding-left: 30px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .header {
-    padding-left: 55px;
+    width: 90%;
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 599px) {
   .header {
-    padding: 28px 0 0;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .header {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .header {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .header {
+    padding: 28px 0 0 27px;
+    width: 100%;
   }
 }

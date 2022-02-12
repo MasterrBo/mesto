@@ -27,4 +27,11 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .profile__title {
+    margin-left: 22px;
+  }
+}
+
+
 
