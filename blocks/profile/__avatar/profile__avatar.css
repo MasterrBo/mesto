@@ -15,7 +15,13 @@
   .profile__avatar {
     width: 90px;
     height: 90px;
-    margin-left: 20px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .profile__avatar {
+    margin-left: 40px;
   }
 }
 

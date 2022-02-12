@@ -16,6 +16,19 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 650px) {
+  .profile__add-button {
+    margin-right: 30px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .profile__add-button {
+    margin-right: 40px;
+  }
+}
+
 @media screen and (max-width: 620px) {
   .profile__add-button {
     margin: 0 auto;

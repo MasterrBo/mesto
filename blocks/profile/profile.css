@@ -4,13 +4,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  box-sizing: border-box;
 }
-
-/* @media screen and (max-width: 650px) {
-  .profile {
-   max-width: 90%;
-  }
-} */
 
 @media screen and (max-width: 620px) {
   .profile {
