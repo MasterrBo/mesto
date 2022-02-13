@@ -10,10 +10,8 @@ function closePopup() {
 profileAddButton.addEventListener('click', openPopup);
 popupCloseButton.addEventListener('click', closePopup);
 
-// Находим форму в DOM
 let formElement = document.querySelector(".popup__container");
 
-// Находим поля формы в DOM
 let nameInput = document.getElementById("name"); 
 let jobInput = document.getElementById("job"); 
 let profileTitle = document.querySelector(".profile__title");
@@ -25,9 +23,6 @@ function openPopup() {
   jobInput.value = profilePost.textContent;
 }
 
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
-
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileTitle.textContent = nameInput.value;
@@ -37,10 +32,4 @@ function formSubmitHandler(evt) {
   closePopup();
 }
 
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
 formElement.addEventListener("submit", formSubmitHandler);
-
-// Находим форму в DOM
-let formElement2 = document.querySelector(".popup__container_addcard");
-formElement2.addEventListener("submit", formSubmitHandler);
