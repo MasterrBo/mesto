@@ -56,7 +56,7 @@ let profileTitle2 = document.querySelector("photo-name");
 let profileLink = document.querySelector("link");
 
 function openPopup2() {
-  popup.classList.add("popup_opened");
+  popup2.classList.add("popup_opened");
   nameInput2.value = profileTitle2.textContent;
   linkInput.value = profileLink.textContent;
 }
