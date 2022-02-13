@@ -86,6 +86,8 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
+       <!-- форма 1 -->
+
       <section class="popup" id="popup__id">
         <div class="popup__wrap">
             <button type="button" class="popup__close-button" aria-label="Закрыть">  
@@ -102,6 +104,25 @@
           </form>
         </div>
       </section>
+
+      <!-- форма 2 -->
+      <section class="popup popup2" id="popup__add-card">
+        <div class="popup__wrap">
+            <button type="button" class="popup__close-button" aria-label="Закрыть">  
+            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
+          </button>
+
+          <form name="form2" class="popup__container popup__container_addcard">
+              <h3 class="popup__title">Новое место</h3>
+
+              <input type="text" class="popup__field" id="photo-name" value="Название" placeholder="Название"/>
+              <input type="text" class="popup__field" id="link" value="Ссылка на картинку" placeholder="Ссылка на картинку" />
+
+              <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
+          </form>
+        </div>
+      </section>
+<!-- Конец формы -->
 
     </div>
     <script src="scripts/index.js"></script>
