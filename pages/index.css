@@ -45,3 +45,19 @@
 #popup__add-card {
   /* display: flex; */
 }
+
+/* .photo-wrap {
+  height: 282px;
+  overflow: hidden;
+} */
+
+.song {
+  align-items: center;
+  display: flex;
+  position: relative;
+  margin-top: 5px;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  font-size: 0.8em;
+  padding: 0 10px;
+}
