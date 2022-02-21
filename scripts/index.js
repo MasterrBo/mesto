@@ -75,7 +75,9 @@ initialCards.forEach(function(x) {
   renderItem(x.name, x.link);
 });
 
-// Передаем данные в шаблон и выводим
+// Функция renderItem
+//Передаем данные в шаблон и выводим
+
 function renderItem(name, link, adding = false) {
   const newItem = template.content.querySelector('.element').cloneNode(true);
 
@@ -100,7 +102,15 @@ function renderItem(name, link, adding = false) {
   } else {
     emptyContainer.appendChild(newItem);
   }
-}
+
+const likeElement = document.querySelector('.element__button');
+
+likeElement.addEventListener('click', function (evt) {
+  // выведите в консоль объект evt
+  console.log(event); 
+// evt.target.classList.toggle('song__like_active');
+});
+
 
   //изменение цвета при клике на сердце (не рабочее)
   // const likeElement = template.content.querySelector('.element__button');
@@ -109,15 +119,6 @@ function renderItem(name, link, adding = false) {
 //     likeElement.classList.add("element__button_active");
 //     console.log(event); 
 // });
-
-const likeElement = document.querySelector('.element__button');
-
-function handleLike(event) {
-  event.target.classList.toggle("element__button_active");
-}
-
-
-
 
 
 
@@ -170,4 +171,5 @@ function formSubmitHandler2(evt) {
   renderItem(nameInput2.value, linkInput.value, true);
 
   closePopup2();
+}
 }
