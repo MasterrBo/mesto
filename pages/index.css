@@ -42,12 +42,26 @@
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
 
-/* #popup__add-card {
-  display: flex; 
-}  */
 
-/* .photo-wrap {
-  height: 282px;
-  overflow: hidden;
-} */
-/* 
+.element__delete {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.element__delete-icon {
+  opacity: 1;
+}
+
+.element__delete-icon:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.element__delete {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}

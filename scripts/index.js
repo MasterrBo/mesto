@@ -1,4 +1,3 @@
-
 // Форма 1
 
 let profileAddButton = document.querySelector(".profile__edit-button");
@@ -79,6 +78,16 @@ initialCards.forEach(function(x) {
 // Передаем данные в шаблон и выводим
 function renderItem(name, link, adding = false) {
   const newItem = template.content.querySelector('.element').cloneNode(true);
+
+  // Сделаем удаление по кнопке
+  const deleteButton = newItem.querySelector('.element__delete');
+
+  // добавим обработчик
+  deleteButton.addEventListener('click', function () {
+    const listItem = deleteButton.closest('.element');
+    listItem.remove();
+  });
+  
   const firstItem = document.querySelector('.elements').firstChild;
 
   newItem.querySelector('.element__title').innerText = name;
@@ -92,6 +101,37 @@ function renderItem(name, link, adding = false) {
     emptyContainer.appendChild(newItem);
   }
 }
+
+  //изменение цвета при клике на сердце (не рабочее)
+  // const likeElement = template.content.querySelector('.element__button');
+
+//   likeElement.addEventListener('click', function (evt) {
+//     likeElement.classList.add("element__button_active");
+//     console.log(event); 
+// });
+
+const likeElement = document.querySelector('.element__button');
+
+function handleLike(event) {
+  event.target.classList.toggle("element__button_active");
+}
+
+
+
+
+
+
+// likeElement.addEventListener('click', (event) => {
+//   event.target.classList.toggle("element__button_active");
+// });
+// }
+
+  // if (likeElement.classList.contains("element__button_active")) {
+  //   likeElement.classList.remove("element__button_active");
+  // } else {
+  //   likeElement.classList.add("element__button_active");
+  // }
+
 
 // Добавление карточки: название и ссылка
 // Форма 2
