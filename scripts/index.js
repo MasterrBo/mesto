@@ -1,3 +1,4 @@
+
 // Форма 1
 
 let profileAddButton = document.querySelector(".profile__edit-button");
@@ -75,21 +76,9 @@ initialCards.forEach(function(x) {
   renderItem(x.name, x.link);
 });
 
-// Функция renderItem
-//Передаем данные в шаблон и выводим
-
+// Передаем данные в шаблон и выводим
 function renderItem(name, link, adding = false) {
   const newItem = template.content.querySelector('.element').cloneNode(true);
-
-  // Сделаем удаление по кнопке
-  const deleteButton = newItem.querySelector('.element__delete');
-
-  // добавим обработчик
-  deleteButton.addEventListener('click', function () {
-    const listItem = deleteButton.closest('.element');
-    listItem.remove();
-  });
-  
   const firstItem = document.querySelector('.elements').firstChild;
 
   newItem.querySelector('.element__title').innerText = name;
@@ -103,39 +92,30 @@ function renderItem(name, link, adding = false) {
     emptyContainer.appendChild(newItem);
   }
 
-const likeElement = document.querySelector('.element__button');
+  // Сделаем удаление по кнопке
+  const deleteButton = newItem.querySelector('.button__element-delete');
+
+  // добавим обработчик
+  deleteButton.addEventListener('click', function () {
+    const listItem = deleteButton.closest('.element');
+    listItem.remove();
+  });
+
+const likeElement = newItem.querySelector('.element__button');
 
 likeElement.addEventListener('click', function (evt) {
-  // выведите в консоль объект evt
-  console.log(event); 
-// evt.target.classList.toggle('song__like_active');
+evt.target.classList.toggle('element__button_active');
+
 });
+}
 
+const likeElement = document.querySelector('.element__button');
 
-  //изменение цвета при клике на сердце (не рабочее)
-  // const likeElement = template.content.querySelector('.element__button');
+function handleLike(event) {
+  event.target.classList.toggle("element__button_active");
+}
 
-//   likeElement.addEventListener('click', function (evt) {
-//     likeElement.classList.add("element__button_active");
-//     console.log(event); 
-// });
-
-
-
-// likeElement.addEventListener('click', (event) => {
-//   event.target.classList.toggle("element__button_active");
-// });
-// }
-
-  // if (likeElement.classList.contains("element__button_active")) {
-  //   likeElement.classList.remove("element__button_active");
-  // } else {
-  //   likeElement.classList.add("element__button_active");
-  // }
-
-
-// Добавление карточки: название и ссылка
-// Форма 2
+// Форма 2: Добавление карточки: название и ссылка
 
 const profileAddcardButton = document.querySelector(".profile__add-button");
 let popupCloseButton2 = document.querySelector(".popup__close-button2");
@@ -172,4 +152,34 @@ function formSubmitHandler2(evt) {
 
   closePopup2();
 }
+
+//форма 3 - попап с картинкой
+
+//Создаем переменные
+let popupPicOpenButton = document.querySelector(".element__photo");
+let popupPicCloseButton = document.querySelector(".popup__close-button3");
+let popupPicture = document.getElementById("popup__picture");
+
+function closePicPopup() {
+  popupPicture.classList.remove("popup__pic_opened");
 }
+
+// popupPicOpenButton.addEventListener('click', openPicPopup);
+popupPicCloseButton.addEventListener('click', closePicPopup);
+
+function openPicPopup(imgSrc) {
+
+  document.querySelector(".img_style").src = imgSrc;
+  console.log(document.querySelector(".img_style").src);
+
+  popupPicture.classList.add("popup__pic_opened");
+}
+
+function formSubmitHandler3(evt) {
+  evt.preventDefault();
+  closePicPopup();
+}
+
+let formElement3 = document.querySelector(".popup-pic__wrap");
+
+formElement.addEventListener("submit", formSubmitHandler3);

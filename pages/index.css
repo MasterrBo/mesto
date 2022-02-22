@@ -43,14 +43,19 @@
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
 
 
-.element__delete {
+.button__element-delete {
   position: absolute;
   top: 20px;
   right: 20px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .element__delete-icon {
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .element__delete-icon:hover {
@@ -58,10 +63,44 @@
   cursor: pointer;
 }
 
-.element__delete {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: none;
+.element__button_like {
   background-color: rgba(0, 0, 0, 0);
+}
+
+.popup__pic {
+  /* display: flex; */
+  display: none;
+
+}                                   
+  
+.popup__pic_opened {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: all 1s;
+}
+
+.popup-pic__wrap {
+  position: absolute; 
+  height: 75vh;
+  width: 75vw;
+/* 
+  flex: 0 1 75vw; */
+  text-align: center;
+}
+
+.popup-pic__content > img {
+  max-height: 75vh;
+  max-width: 75vw;
+}
+
+.popup-pic__content {
+  position: relative;
+  display: inline-block;
+}
+
+.popup__close-button3 {
+    position: absolute; 
+    right: -40px;
+    top: -40px;
 }

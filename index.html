@@ -123,17 +123,34 @@
           </form>
         </div>
       </section>
-<!-- Конец формы -->
+
+<!-- форма 3 -->
+      <section class="popup popup__pic" id="popup__picture">
+        <div class="popup-pic__wrap">
+          <span class="popup-pic__content">
+            <button type="button" class="popup__close-button popup__close-button3" aria-label="Закрыть">  
+              <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
+            </button>
+
+         <img class="img_style" src=".">
+
+          </span>
+
+        </div>
+      </section>
 
     </div>
+
+    <!-- template-->
 
     <template id="card-template">
       <article class="element">
         <!-- Добавляем иконку корзины-->
-        <button type="button" class="element__delete" aria-label="Удалить">  
+        <button type="button" class="button__element-delete" aria-label="Удалить">  
           <img class="element__delete-icon" src="./images/trash2.svg" alt="Иконка удаления" />
         </button>
-        <img class="element__photo" src="." alt="" />
+        <img class="element__photo" src="." alt="" onclick="openPicPopup(this.src)"/>
+
         <div class="element__content">
           <h2 class="element__title"></h2>
           <button class="element__button" type="button" aria-label="Лайкнуть"></button>
