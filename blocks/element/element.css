@@ -13,7 +13,7 @@
   position: relative;
 }
 
-@media screen and (max-width: 1259px) {
+/* @media screen and (max-width: 1259px) {
 .element {
   width: 255px;
 }
@@ -36,5 +36,5 @@
       width: 282px;
     }
     }
-  
+   */
 
