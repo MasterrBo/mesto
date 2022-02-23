@@ -53,17 +53,17 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__pic/_opened/popup__pic_opened.css);
 
-.elements {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: auto;
-  padding: 0;
-  margin: 51px 0 0;
-  gap: 17px;
-  row-gap: 3px;
-  max-width: 1280px;
-  box-sizing: border-box;
-  }
+
+  .elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    grid-template-rows: auto;
+    padding: 0;
+    margin: 51px 0 0;
+    gap: 17px;
+    row-gap: 3px;
+    max-width: 1280px;
+    box-sizing: border-box;
+    }
 
   
