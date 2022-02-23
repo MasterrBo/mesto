@@ -159,7 +159,7 @@ let popupPicCloseButton = document.querySelector(".popup__close-button_form");
 let popupPicture = document.getElementById("popup__picture");
 
 function closePicPopup() {
-  popupPicture.classList.remove("popup__pic_opened");
+  popupPicture.classList.remove("popup_opened");
 }
 
 popupPicCloseButton.addEventListener('click', closePicPopup);
@@ -169,7 +169,7 @@ function openPicPopup(imgSrc) {
   document.querySelector(".popup__pic-style").src = imgSrc;
   console.log(document.querySelector(".popup__pic-style").src);
 
-  popupPicture.classList.add("popup__pic_opened");
+  popupPicture.classList.add("popup_opened");
 }
 
 function formSubmitHandler3(evt) {

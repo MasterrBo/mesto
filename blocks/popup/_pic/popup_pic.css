@@ -1,5 +1,10 @@
-
+/* 
 .popup__pic {
+  display: none;
+} */
+
+
+.popup_pic {
   /* display: flex; test*/
   display: none;
 }
