@@ -14,13 +14,13 @@
 
       <main class="content">
         <section class="profile">
-          <img src="./images/kusto.png" class="profile__avatar" alt="Ваше фото"/>
+          <img src="./images/kusto.png" class="profile__avatar" alt="Ваше фото" />
 
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
               <button type="button" aria-label="Редактировать" class="profile__edit-button">
-                <img class="profile__edit-icon" src="./images/Edit_Button.svg" alt="Редактировать карточку"/>
+                <img class="profile__edit-icon" src="./images/Edit_Button.svg" alt="Редактировать карточку" />
               </button>
             </div>
             <p class="profile__post">Исследователь океана</p>
@@ -32,7 +32,6 @@
         </section>
 
         <section class="elements">
-
           <!-- <article class="element">
             <img class="element__photo" src="./images/karachaevsk.png" alt="Карачаевск фото" />
             <div class="element__content">
@@ -87,21 +86,20 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
-       <!-- форма 1 -->
-
+      <!-- форма 1 -->
       <section class="popup" id="popup__id">
         <div class="popup__wrap">
-            <button type="button" class="popup__close-button" aria-label="Закрыть">  
+          <button type="button" class="popup__close-button" aria-label="Закрыть">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
           <form name="form1" class="popup__container">
-              <h3 class="popup__title">Редактировать профиль</h3>
+            <h3 class="popup__title">Редактировать профиль</h3>
 
-              <input type="text" class="popup__field" id="name" value="" placeholder="Жак-Ив Кусто"/>
-              <input type="text" class="popup__field" id="job" value="" placeholder="Исследователь океана" />
+            <input type="text" class="popup__field" id="name" value="" placeholder="Жак-Ив Кусто" />
+            <input type="text" class="popup__field" id="job" value="" placeholder="Исследователь океана" />
 
-              <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
+            <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
           </form>
         </div>
       </section>
@@ -109,47 +107,42 @@
       <!-- форма 2 -->
       <section class="popup popup2" id="popup__add-card">
         <div class="popup__wrap">
-            <button type="button" class="popup__close-button popup__close-button2" aria-label="Закрыть">  
+          <button type="button" class="popup__close-button popup__close-button2" aria-label="Закрыть">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
           <form name="form2" class="popup__container popup__container_addcard">
-              <h3 class="popup__title">Новое место</h3>
+            <h3 class="popup__title">Новое место</h3>
 
-              <input type="text" class="popup__field popup__field_name" id="photo-name" value="" placeholder="Название"/>
-              <input type="text" class="popup__field popup__field_link" id="link" value="" placeholder="Ссылка на картинку" />
+            <input type="text" class="popup__field popup__field_name" id="photo-name" value="" placeholder="Название" />
+            <input type="text" class="popup__field popup__field_link" id="link" value="" placeholder="Ссылка на картинку" />
 
-              <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
+            <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
           </form>
         </div>
       </section>
 
-<!-- форма 3 -->
+      <!-- форма 3 -->
       <section class="popup popup__pic" id="popup__picture">
-        <div class="popup-pic__wrap">
-          <span class="popup-pic__content">
-            <button type="button" class="popup__close-button popup__close-button3" aria-label="Закрыть">  
+        <div class="popup__pic-wrap">
+          <span class="popup__pic-content">
+            <button type="button" class="popup__close-button popup__close-button_form" aria-label="Закрыть">
               <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
             </button>
-
-         <img class="img_style" src=".">
-
+            <img class="popup__pic-style" src="." />
           </span>
-
         </div>
       </section>
-
     </div>
 
     <!-- template-->
-
     <template id="card-template">
       <article class="element">
         <!-- Добавляем иконку корзины-->
-        <button type="button" class="button__element-delete" aria-label="Удалить">  
+        <button type="button" class="element__delete-button" aria-label="Удалить">
           <img class="element__delete-icon" src="./images/trash2.svg" alt="Иконка удаления" />
         </button>
-        <img class="element__photo" src="." alt="" onclick="openPicPopup(this.src)"/>
+        <img class="element__photo" src="." alt="" onclick="openPicPopup(this.src)" />
 
         <div class="element__content">
           <h2 class="element__title"></h2>

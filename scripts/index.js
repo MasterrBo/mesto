@@ -1,9 +1,8 @@
-
 // Форма 1
 
-let profileAddButton = document.querySelector(".profile__edit-button");
-let popupCloseButton = document.querySelector(".popup__close-button");
-let popup = document.querySelector(".popup");
+const profileAddButton = document.querySelector(".profile__edit-button");
+const popupCloseButton = document.querySelector(".popup__close-button");
+const popup = document.querySelector(".popup");
 
 function closePopup() {
   popup.classList.remove("popup_opened");
@@ -12,12 +11,12 @@ function closePopup() {
 profileAddButton.addEventListener('click', openPopup);
 popupCloseButton.addEventListener('click', closePopup);
 
-let formElement = document.querySelector(".popup__container");
+const formElement = document.querySelector(".popup__container");
 
-let nameInput = document.getElementById("name");
-let jobInput = document.getElementById("job");
-let profileTitle = document.querySelector(".profile__title");
-let profilePost = document.querySelector(".profile__post");
+const nameInput = document.getElementById("name");
+const jobInput = document.getElementById("job");
+const profileTitle = document.querySelector(".profile__title");
+const profilePost = document.querySelector(".profile__post");
 
 function openPopup() {
   popup.classList.add("popup_opened");
@@ -93,7 +92,7 @@ function renderItem(name, link, adding = false) {
   }
 
   // Сделаем удаление по кнопке
-  const deleteButton = newItem.querySelector('.button__element-delete');
+  const deleteButton = newItem.querySelector('.element__delete-button');
 
   // добавим обработчик
   deleteButton.addEventListener('click', function () {
@@ -105,7 +104,6 @@ const likeElement = newItem.querySelector('.element__button');
 
 likeElement.addEventListener('click', function (evt) {
 evt.target.classList.toggle('element__button_active');
-
 });
 }
 
@@ -118,15 +116,15 @@ function handleLike(event) {
 // Форма 2: Добавление карточки: название и ссылка
 
 const profileAddcardButton = document.querySelector(".profile__add-button");
-let popupCloseButton2 = document.querySelector(".popup__close-button2");
+const popupCloseButton2 = document.querySelector(".popup__close-button2");
 
 profileAddcardButton.addEventListener('click', openPopup2);
-let popup2 = document.querySelector(".popup2");
+const popup2 = document.querySelector(".popup2");
 
 profileAddcardButton.addEventListener('click', openPopup2);
 popupCloseButton2.addEventListener('click', closePopup2);
 
-let formElement2 = document.querySelector(".popup__container_addcard");
+const formElement2 = document.querySelector(".popup__container_addcard");
 
 //Определяем переменные для второй формы
 
@@ -157,20 +155,19 @@ function formSubmitHandler2(evt) {
 
 //Создаем переменные
 let popupPicOpenButton = document.querySelector(".element__photo");
-let popupPicCloseButton = document.querySelector(".popup__close-button3");
+let popupPicCloseButton = document.querySelector(".popup__close-button_form");
 let popupPicture = document.getElementById("popup__picture");
 
 function closePicPopup() {
   popupPicture.classList.remove("popup__pic_opened");
 }
 
-// popupPicOpenButton.addEventListener('click', openPicPopup);
 popupPicCloseButton.addEventListener('click', closePicPopup);
 
 function openPicPopup(imgSrc) {
 
-  document.querySelector(".img_style").src = imgSrc;
-  console.log(document.querySelector(".img_style").src);
+  document.querySelector(".popup__pic-style").src = imgSrc;
+  console.log(document.querySelector(".popup__pic-style").src);
 
   popupPicture.classList.add("popup__pic_opened");
 }
@@ -180,6 +177,6 @@ function formSubmitHandler3(evt) {
   closePicPopup();
 }
 
-let formElement3 = document.querySelector(".popup-pic__wrap");
+const formElement3 = document.querySelector(".popup__pic-wrap");
 
 formElement.addEventListener("submit", formSubmitHandler3);

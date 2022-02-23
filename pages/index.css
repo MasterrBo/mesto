@@ -22,6 +22,10 @@
 
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/element/element.css);
+@import url(../blocks/element/__delete-button/element__delete-button.css);
+@import url(../blocks/element/__delete-icon/element__delete-icon.css);
+@import url(../blocks/element/__button/_like/element__button_like.css);
+
 @import url(../blocks/element/__button/element__button.css);
 @import url(../blocks/element/__button/_active/element__button_active.css);
 @import url(../blocks/element/__photo/element__photo.css);
@@ -32,6 +36,8 @@
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__pic/popup__pic.css);
+@import url(../blocks/popup/__pic/_opened/popup__pic_opened.css);
 @import url(../blocks/popup/__wrap/popup__wrap.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
@@ -41,66 +47,7 @@
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
-
-
-.button__element-delete {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.element__delete-icon {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.element__delete-icon:hover {
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-.element__button_like {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.popup__pic {
-  /* display: flex; */
-  display: none;
-
-}                                   
-  
-.popup__pic_opened {
-    display: flex;
-    visibility: visible;
-    opacity: 1;
-    transition: all 1s;
-}
-
-.popup-pic__wrap {
-  position: absolute; 
-  height: 75vh;
-  width: 75vw;
-/* 
-  flex: 0 1 75vw; */
-  text-align: center;
-}
-
-.popup-pic__content > img {
-  max-height: 75vh;
-  max-width: 75vw;
-}
-
-.popup-pic__content {
-  position: relative;
-  display: inline-block;
-}
-
-.popup__close-button3 {
-    position: absolute; 
-    right: -40px;
-    top: -40px;
-}
+@import url(../blocks/popup/__pic-wrap/popup__pic-wrap.css);
+@import url(../blocks/popup/__pic-style/popup__pic-style.css);
+@import url(../blocks/popup/__close-button/_form/popup__close-button_form.css);
+@import url(../blocks/popup/__pic-content/popup__pic-content.css);
