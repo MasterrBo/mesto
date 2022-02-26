@@ -8,7 +8,7 @@ const profileTitle = document.querySelector(".profile__title");
 const profilePost = document.querySelector(".profile__post");
 const CardContainer = document.querySelector('.elements');
 const profileAddButton = document.querySelector('.profile__add-button');
-const popupAddCard = document.querySelector(".popup2");
+const popupAddCard = document.querySelector('.popup2');
 const closeAddCardPopupButton = popupAddCard.querySelector('.popup__close-button');
 const addCardForm = popupAddCard.querySelector('form');
 const addCardFormInputs = popupAddCard.querySelectorAll('form .popup__field');
@@ -19,7 +19,7 @@ const popupCardTitle = fullscreenPicPopup.querySelector('.popup__pic-heading');
 
 // Делаем вывод карточек через JS
 
-const initialCards = [
+const CardsInitial = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -46,10 +46,9 @@ const initialCards = [
   }
 ];
 
-initialCards.forEach(el => {
+CardsInitial.forEach(el => {
   addCard(renderItem(el.link, el.name));
 });
-// console.log(initialCards);
 
 function renderItem(link, name) {
   const addCardFormInputs = popupAddCard.querySelectorAll('form .popup__field');
@@ -129,6 +128,10 @@ popupCloseButton.addEventListener('click', function () {
 
 profileAddButton.addEventListener('click', function () {
   openPopup(popupAddCard)
+});
+
+closeAddCardPopupButton.addEventListener('click', function () {
+  closePopup(popupAddCard)
 });
 
 closeFullscreenPicPopup.addEventListener('click', function () {

@@ -49,27 +49,5 @@
 @import url(../blocks/popup/__pic-style/popup__pic-style.css);
 @import url(../blocks/popup/__close-button/_form/popup__close-button_form.css);
 @import url(../blocks/popup/__pic-content/popup__pic-content.css);
-
+@import url(../blocks/popup/__pic-heading/popup__pic-heading.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-/* @import url(../blocks/popup/__pic/_opened/popup__pic_opened.css); */
-
-
-  .elements {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    grid-template-rows: auto;
-    padding: 0;
-    margin: 51px 0 0;
-    gap: 17px;
-    row-gap: 3px;
-    max-width: 1280px;
-    box-sizing: border-box;
-    }
-
-    .popup__pic_opened {
-      display: flex;
-      visibility: visible;
-      opacity: 1;
-      transition: all 1s;
-    }
-  
