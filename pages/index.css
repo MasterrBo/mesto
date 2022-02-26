@@ -51,7 +51,7 @@
 @import url(../blocks/popup/__pic-content/popup__pic-content.css);
 
 @import url(../blocks/popup/_opened/popup_opened.css);
-@import url(../blocks/popup/__pic/_opened/popup__pic_opened.css);
+/* @import url(../blocks/popup/__pic/_opened/popup__pic_opened.css); */
 
 
   .elements {
@@ -66,4 +66,10 @@
     box-sizing: border-box;
     }
 
+    .popup__pic_opened {
+      display: flex;
+      visibility: visible;
+      opacity: 1;
+      transition: all 1s;
+    }
   

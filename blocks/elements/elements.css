@@ -10,18 +10,7 @@
   box-sizing: border-box;
 }*/
 
-.elements {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-  grid-template-rows: auto;
-  padding: 0;
-  margin: 51px 0 0;
-  gap: 17px;
-  row-gap: 3px;
-  max-width: 1280px;
-  box-sizing: border-box;
-  }
+
 
   /* @media screen and (max-width: 1140px) {
     .elements {
@@ -47,10 +36,10 @@
     padding: 0 10px;
   }
 } */
-
+/* 
 @media screen and (max-width: 599px) {
   .elements {
     margin-top: 36px;
     flex-direction: column;
   }
-}
+} */
