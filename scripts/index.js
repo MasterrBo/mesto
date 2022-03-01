@@ -18,12 +18,12 @@ const nameInput = document.getElementById("name");
 const jobInput = document.getElementById("job");
 const template = document.querySelector('#card-template').content;
 const photoInput = document.getElementById("photo-name");
-const LinkInput = document.getElementById("link");
+const linkInput = document.getElementById("link");
 
 
 // Делаем вывод карточек через JS
 
-const CardsInitial = [
+const cardsInitial = [
   {
     name: 'Архыз',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -50,7 +50,7 @@ const CardsInitial = [
   }
 ];
 
-CardsInitial.forEach(el => {
+cardsInitial.forEach(el => {
   addCard(renderItem(el.link, el.name));
 });
 
@@ -106,7 +106,7 @@ function handleProfileForm(evt) {
 function handlecardFormAdd(evt) {
   evt.preventDefault();
 
-  addCard(renderItem(LinkInput.value, photoInput.value));
+  addCard(renderItem(linkInput.value, photoInput.value));
   closePopup(popupAddCard);
 }
 
