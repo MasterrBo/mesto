@@ -134,3 +134,21 @@ fullscreenPicPopupClose.addEventListener('click', function () {
 
 profileForm.addEventListener('submit', handleProfileForm);
 cardFormAdd.addEventListener('submit', handlecardFormAdd);
+
+
+// Sprint 6
+
+document.forms.form-profile; // первая форма
+document.forms.form-card; // вторая форма 
+
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
+
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+});

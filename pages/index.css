@@ -51,3 +51,22 @@
 @import url(../blocks/popup/__pic-content/popup__pic-content.css);
 @import url(../blocks/popup/__pic-heading/popup__pic-heading.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
+
+.error {
+ color: #FF0000;
+ font-weight: 400;
+ font-style: normal;
+ font-size: 12px;
+ line-height: 15px;
+ padding: 0;
+ margin: 0;
+}
+
+.text-begin {
+  color: #C4C4C4;
+ }
+ 
+.popup-no-active {
+  background-color: #FFFFFF;
+  color: #C4C4C4;
+}
