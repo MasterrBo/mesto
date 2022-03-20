@@ -20,7 +20,6 @@ const template = document.querySelector('#card-template').content;
 const photoInput = document.getElementById("photo-name");
 const linkInput = document.getElementById("link");
 
-
 // Делаем вывод карточек через JS
 
 const cardsInitial = [
@@ -103,6 +102,21 @@ function handleProfileForm(evt) {
   closePopup(popupProfile);
 }
 
+//объявляем функцию setSubmitButtonState для событий change и input
+
+function setSubmitButtonState(isFormValid) {
+  //Контсанта для проверки - заполнены ли поля формы
+   const saveButton = document.querySelector('.popup__save_action');
+
+  if (isFormValid) {
+    saveButton.removeAttribute('disabled');
+    saveButton.classList.remove('popup__save_disabled'); 
+  } else {
+    saveButton.setAttribute('disabled', true);
+    saveButton.classList.add('popup__save_disabled'); 
+}
+}
+
 function handlecardFormAdd(evt) {
   evt.preventDefault();
 
@@ -135,20 +149,53 @@ fullscreenPicPopupClose.addEventListener('click', function () {
 profileForm.addEventListener('submit', handleProfileForm);
 cardFormAdd.addEventListener('submit', handlecardFormAdd);
 
-
 // Sprint 6
 
-document.forms.form-profile; // первая форма
-document.forms.form-card; // вторая форма 
+document.forms.form1; // первая форма
+document.forms.form2; // вторая форма 
 
 // включение валидации вызовом enableValidation
-// все настройки передаются при вызове
+// все настройки передаются при вызове//
 
-enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
+// enableValidation({
+//   formSelector: '.popup__form',
+//   inputSelector: '.popup__input',
+//   submitButtonSelector: '.popup__button',
+//   inactiveButtonClass: 'popup__button_disabled',
+//   inputErrorClass: 'popup__input_type_error',
+//   errorClass: 'popup__error_visible'
+// });
+
+console.log(document.forms.form1);
+console.log(document.forms.form2);
+
+//определить первую форму
+const formProfile = document.forms.form1;
+
+//достанем элементы формы по их именам
+const yourname = form1.elements.yourname;
+const yourjob = form1.elements.yourjob;
+
+//Отменить стандартное поведение, которое возникает при наступлении события submit
+formProfile.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  profileTitle.textContent = nameInput.value;
+  profilePost.textContent = jobInput.value;
+  yourname.value = '';
+  yourjob.value = '';
 });
+
+//Получение элементов форм
+document.forms.form1.elements; // элементы первой формы
+
+//обратимся к элементам формы через точку по имени
+form1.elements.yourname;
+form1.elements.yourjob;
+
+formProfile.addEventListener('input', function (evt) {
+  const isValid = yourname.value.length > 0 && yourjob.value.length > 0;
+  // выводим evt в консоль
+ console.log(evt);
+ setSubmitButtonState(isValid);
+}
+);

@@ -40,20 +40,20 @@
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
 
-      <!-- Форма 1 Профиль -->
+      <!-- Форма 1 Редактировать профиль -->
       <section class="popup popup_profile" id="popup__id">
         <div class="popup__wrap">
           <button type="button" class="popup__close-button" aria-label="Закрыть">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
-          <form name="form-profile" class="popup__container">
+          <form name="form1" class="popup__container">
             <h3 class="popup__title">Редактировать профиль</h3>
 
-            <input type="text" class="popup__field" id="name" value="" placeholder="Введите имя" />
-            <input type="text" class="popup__field" id="job" value="" placeholder="Введите профессию" />
+            <input type="text" name="yourname" class="popup__field" id="name" value="" placeholder="Введите имя" />
+            <input type="text" name="yourjob" class="popup__field" id="job" value="" placeholder="Введите профессию" />
 
-            <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
+            <button type="submit" class="popup__save popup__save_action" aria-label="Сохранить">Сохранить</button>
           </form>
         </div>
       </section>
@@ -65,7 +65,7 @@
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
-          <form name="form-card" class="popup__container popup__container_addcard">
+          <form name="form2" class="popup__container popup__container_addcard">
             <h3 class="popup__title">Новое место</h3>
 
             <input type="text" class="popup__field popup__field_name" id="photo-name" value="" placeholder="Название" />

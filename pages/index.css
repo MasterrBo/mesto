@@ -70,3 +70,8 @@
   background-color: #FFFFFF;
   color: #C4C4C4;
 }
+
+.popup__save_disabled {
+  background-color: #f1f1f1;
+  cursor: move;
+}
