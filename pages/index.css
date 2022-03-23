@@ -75,3 +75,13 @@
   background-color: #f1f1f1;
   cursor: default;
 }
+
+.popup__save_disabled:hover {
+  background-color: #f1f1f1;
+  cursor: default;
+}
+
+.popup__field:invalid {
+  border-bottom: 5px solid #FF0000; 
+}
+

@@ -166,24 +166,25 @@ document.forms.form2; // вторая форма
 //   errorClass: 'popup__error_visible'
 // });
 
-console.log(document.forms.form1);
+// console.log(document.forms.form1);
 console.log(document.forms.form2);
 
 //определить первую форму
-const formProfile = document.forms.form1;
+// const formProfile = document.forms.form1;
 
 //достанем элементы формы по их именам
 const yourname = form1.elements.yourname;
 const yourjob = form1.elements.yourjob;
 
 //Отменить стандартное поведение, которое возникает при наступлении события submit
-formProfile.addEventListener('submit', function (evt) {
-  evt.preventDefault();
-  profileTitle.textContent = nameInput.value;
-  profilePost.textContent = jobInput.value;
-  yourname.value = '';
-  yourjob.value = '';
-});
+// formProfile.addEventListener('submit', function (evt) {
+//   evt.preventDefault();
+//   profileTitle.textContent = nameInput.value;
+//   profilePost.textContent = jobInput.value;
+//   yourname.value = '';
+//   yourjob.value = '';
+//   console.log('profileForm submitted');
+// });
 
 //Получение элементов форм
 document.forms.form1.elements; // элементы первой формы
@@ -192,10 +193,45 @@ document.forms.form1.elements; // элементы первой формы
 form1.elements.yourname;
 form1.elements.yourjob;
 
-formProfile.addEventListener('input', function (evt) {
-  const isValid = yourname.value.length > 0 && yourjob.value.length > 0;
-  // выводим evt в консоль
- console.log(evt);
+profileForm.addEventListener('input', function (evt) {
+    let isValid = false;
+    if (yourname.value.length > 2 && yourname.value.length < 40 && yourjob.value.length > 2 && yourjob.value.length < 200 ) {
+      isValid = true;
+  }
+// выводим evt в консоль
+//console.log(evt);
  setSubmitButtonState(isValid);
 }
 );
+
+ const formSubmit = event => {
+  event.preventDefault();
+  console.log('profileForm submitted, is valid?', profileForm.checkValidity());
+ }
+
+const checkInputValidity = (formProfile, input) => {
+
+  const errorMessage = profileForm.querySelector(`#error-${input.id}`);
+  console.log(errorMessage);
+
+  if (input.validity.valid) {
+
+  } else {
+
+  }
+ 
+  }
+
+
+
+function enableValidation() {
+  profileForm.addEventListener('submit', formSubmit);
+
+  const inputs = document.querySelectorAll('.popup__field');
+
+  inputs.forEach(input => {
+     input.addEventListener ('input',(event) => checkInputValidity(profileForm, input));
+    })
+  }
+
+enableValidation();

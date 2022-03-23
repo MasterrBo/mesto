@@ -47,19 +47,22 @@
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
-          <form name="form1" class="popup__container">
+          <form name="form1" class="popup__container" novalidate>
             <h3 class="popup__title">Редактировать профиль</h3>
 
-            <input type="text" name="yourname" class="popup__field" id="name" value="" placeholder="Введите имя" />
-            <input type="text" name="yourjob" class="popup__field" id="job" value="" placeholder="Введите профессию" />
+            <input type="text" name="yourname" class="popup__field" id="name" value="" required placeholder="Введите имя" />
+            <span id="error-name" class="error-message error-message_visible error-message_type_username"></span>
 
-            <button type="submit" class="popup__save popup__save_action" aria-label="Сохранить">Сохранить</button>
+            <input type="text" name="yourjob" class="popup__field" id="job" value="" required placeholder="Введите профессию" />
+            <span id="error-name" class="error-message error-message_visible error-message error-message_type_username"></span>
+
+            <button type="submit" class="popup__save popup__save_action popup__save_disabled" aria-label="Сохранить">Сохранить</button>
           </form>
         </div>
       </section>
 
       <!-- форма 2 Добавить карточку -->
-      <section class="popup popup_card" id="popup__add-card">
+      <section class="popup popup_card" id="popup__add-card" novalidate>
         <div class="popup__wrap">
           <button type="button" class="popup__close-button" aria-label="Закрыть">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
@@ -68,8 +71,8 @@
           <form name="form2" class="popup__container popup__container_addcard">
             <h3 class="popup__title">Новое место</h3>
 
-            <input type="text" class="popup__field popup__field_name" id="photo-name" value="" placeholder="Название" />
-            <input type="text" class="popup__field popup__field_link" id="link" value="" placeholder="Ссылка на картинку" />
+            <input type="text" class="popup__field popup__field_name" id="photo-name" required value="" placeholder="Название" />
+            <input type="text" class="popup__field popup__field_link" id="link" required value="" placeholder="Ссылка на картинку" />
 
             <button type="submit" class="popup__save" aria-label="Сохранить">Сохранить</button>
           </form>
