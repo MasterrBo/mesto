@@ -17,7 +17,7 @@ const popupCardTitle = fullscreenPicPopup.querySelector('.popup__pic-heading');
 const nameInput = document.getElementById("name");
 const jobInput = document.getElementById("job");
 const template = document.querySelector('#card-template').content;
-const photoInput = document.getElementById("photo-name");
+const photoInput = document.getElementById("photo");
 const linkInput = document.getElementById("link");
 
 // Делаем вывод карточек через JS
@@ -102,8 +102,6 @@ function handleProfileForm(evt) {
   closePopup(popupProfile);
 }
 
-
-
 function handlecardFormAdd(evt) {
   evt.preventDefault();
 
@@ -140,24 +138,6 @@ cardFormAdd.addEventListener('submit', handlecardFormAdd);
 
 document.forms.form1; // первая форма
 document.forms.form2; // вторая форма 
-
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове//
-
-// enableValidation({
-//   formSelector: '.popup__form',
-//   inputSelector: '.popup__input',
-//   submitButtonSelector: '.popup__button',
-//   inactiveButtonClass: 'popup__button_disabled',
-//   inputErrorClass: 'popup__input_type_error',
-//   errorClass: 'popup__error_visible'
-// });
-
-console.log(document.forms.form2);
-
-//определить первую форму
-// const formProfile = document.forms.form1;
-
 //достанем элементы формы по их именам
 const yourname = form1.elements.yourname;
 const yourjob = form1.elements.yourjob;
@@ -165,32 +145,22 @@ const yourjob = form1.elements.yourjob;
 //Отменить стандартное поведение, которое возникает при наступлении события submit
 profileForm.addEventListener('submit', function (evt) {
   evt.preventDefault();
-  profileTitle.textContent = nameInput.value;
-  profilePost.textContent = jobInput.value;
   yourname.value = '';
   yourjob.value = '';
   console.log('profileForm submitted');
 });
 
-//Получение элементов форм
-document.forms.form1.elements; // элементы первой формы
-
-//обратимся к элементам формы через точку по имени
-form1.elements.yourname;
-form1.elements.yourjob;
-
 profileForm.addEventListener('input', function (evt) {
     let isValid = false;
-    if (yourname.value.length > 1 && yourname.value.length < 40 && yourjob.value.length > 1 && yourjob.value.length < 200 ) {
+    if (yourname.value.length > 1 && yourname.value.length < 40 && yourjob.value.length > 1 && yourjob.value.length < 200) {
       isValid = true;
   }
-// выводим evt в консоль
-//console.log(evt);
+
  setSubmitButtonState(isValid);
 }
 );
 
- const formSubmit = event => {
+const formSubmit = event => {
   event.preventDefault();
   console.log('profileForm submitted, is valid?', profileForm.checkValidity());
  }
@@ -211,11 +181,9 @@ const checkInputValidity = (formProfile, input) => {
   }
 
 //объявляем функцию setSubmitButtonState для событий change и input
-
 function setSubmitButtonState(isFormValid) {
-  
-  //Контсанта для проверки - заполнены ли поля формы
-   const saveButton = document.querySelector('.popup__save_action');
+
+const saveButton = document.querySelector('.popup__save_action');
 
   if (isFormValid) {
     saveButton.removeAttribute('disabled');
@@ -225,6 +193,18 @@ function setSubmitButtonState(isFormValid) {
     saveButton.classList.add('popup__save_disabled'); 
   }
 }
+
+  //Контсанта для проверки - заполнены ли поля формы
+ 
+// const checkButtonValidity = (profileForm, button) => {
+//   if (profileForm.checkValidity()) {
+//       saveButton.removeAttribute('disabled');
+//       saveButton.classList.remove('popup__save_disabled');
+//   } else {
+//       saveButton.setAttribute('disabled', '');
+//       saveButton.classList.add('popup__save_disabled');
+//   }
+// }
 
 function enableValidation() {
   profileForm.addEventListener('submit', formSubmit);
@@ -236,4 +216,15 @@ function enableValidation() {
     })
   }
 
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове//
+
 enableValidation();
+// enableValidation({
+//   formSelector: '.popup__form',
+//   inputSelector: '.popup__input',
+//   submitButtonSelector: '.popup__button',
+//   inactiveButtonClass: 'popup__button_disabled',
+//   inputErrorClass: 'popup__input_type_error',
+//   errorClass: 'popup__error_visible'
+// });
