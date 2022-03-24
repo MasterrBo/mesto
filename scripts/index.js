@@ -102,20 +102,7 @@ function handleProfileForm(evt) {
   closePopup(popupProfile);
 }
 
-//объявляем функцию setSubmitButtonState для событий change и input
 
-function setSubmitButtonState(isFormValid) {
-  //Контсанта для проверки - заполнены ли поля формы
-   const saveButton = document.querySelector('.popup__save_action');
-
-  if (isFormValid) {
-    saveButton.removeAttribute('disabled');
-    saveButton.classList.remove('popup__save_disabled'); 
-  } else {
-    saveButton.setAttribute('disabled', true);
-    saveButton.classList.add('popup__save_disabled'); 
-}
-}
 
 function handlecardFormAdd(evt) {
   evt.preventDefault();
@@ -166,7 +153,6 @@ document.forms.form2; // вторая форма
 //   errorClass: 'popup__error_visible'
 // });
 
-// console.log(document.forms.form1);
 console.log(document.forms.form2);
 
 //определить первую форму
@@ -177,14 +163,14 @@ const yourname = form1.elements.yourname;
 const yourjob = form1.elements.yourjob;
 
 //Отменить стандартное поведение, которое возникает при наступлении события submit
-// formProfile.addEventListener('submit', function (evt) {
-//   evt.preventDefault();
-//   profileTitle.textContent = nameInput.value;
-//   profilePost.textContent = jobInput.value;
-//   yourname.value = '';
-//   yourjob.value = '';
-//   console.log('profileForm submitted');
-// });
+profileForm.addEventListener('submit', function (evt) {
+  evt.preventDefault();
+  profileTitle.textContent = nameInput.value;
+  profilePost.textContent = jobInput.value;
+  yourname.value = '';
+  yourjob.value = '';
+  console.log('profileForm submitted');
+});
 
 //Получение элементов форм
 document.forms.form1.elements; // элементы первой формы
@@ -195,7 +181,7 @@ form1.elements.yourjob;
 
 profileForm.addEventListener('input', function (evt) {
     let isValid = false;
-    if (yourname.value.length > 2 && yourname.value.length < 40 && yourjob.value.length > 2 && yourjob.value.length < 200 ) {
+    if (yourname.value.length > 1 && yourname.value.length < 40 && yourjob.value.length > 1 && yourjob.value.length < 200 ) {
       isValid = true;
   }
 // выводим evt в консоль
@@ -209,20 +195,36 @@ profileForm.addEventListener('input', function (evt) {
   console.log('profileForm submitted, is valid?', profileForm.checkValidity());
  }
 
+//Проверить валидность инпута и показать это пользователю
 const checkInputValidity = (formProfile, input) => {
 
-  const errorMessage = profileForm.querySelector(`#error-${input.id}`);
-  console.log(errorMessage);
+    const errorMessage = profileForm.querySelector(`#error-${input.id}`);
+    console.log(errorMessage);
 
-  if (input.validity.valid) {
+    if (input.validity.valid) {
+        errorMessage.textContent = '';
+        input.classList.remove('input__text_type_error');
+    } else {
+        errorMessage.textContent = input.validationMessage;
+        input.classList.add('input__text_type_error');
+    }
+  }
 
+//объявляем функцию setSubmitButtonState для событий change и input
+
+function setSubmitButtonState(isFormValid) {
+  
+  //Контсанта для проверки - заполнены ли поля формы
+   const saveButton = document.querySelector('.popup__save_action');
+
+  if (isFormValid) {
+    saveButton.removeAttribute('disabled');
+    saveButton.classList.remove('popup__save_disabled'); 
   } else {
-
+    saveButton.setAttribute('disabled', true);
+    saveButton.classList.add('popup__save_disabled'); 
   }
- 
-  }
-
-
+}
 
 function enableValidation() {
   profileForm.addEventListener('submit', formSubmit);
