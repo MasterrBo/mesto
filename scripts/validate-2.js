@@ -1,3 +1,17 @@
+
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
+
+const object = {
+  formSelector: '.popup__container',
+  inputSelector: '.popup__field',
+  submitButtonSelector: ".popup__save_action",
+  errorClass: '.error-message',
+  inactiveButtonClass: 'popup__save_disabled',
+ // inputErrorClass: тут не знаю что за класс
+};
+
+
 const showError = (formElement, inputElement, errorMessage ) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
 
@@ -82,4 +96,4 @@ const enableValidation = () => {
   formlist.forEach(formlistIterator);
 };
 
-enableValidation();
+enableValidation(object);
