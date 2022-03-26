@@ -1,3 +1,5 @@
 .popup__wrap {
   text-align: right;
+  position: relative;
+  z-index: 3;
 }

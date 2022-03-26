@@ -1,5 +1,6 @@
 const profileEditButton = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile"); 
+const popupProfileOverlay = document.querySelector(".popup__overlay");
 const popupCloseButton = document.querySelector(".popup__close-button");
 const profileForm = popupProfile.querySelector('.popup__container');
 const profileBox = document.querySelector('.profile');
@@ -8,10 +9,12 @@ const profilePost = document.querySelector(".profile__post");
 const cardContainer = document.querySelector('.elements');
 const profileAddButton = document.querySelector('.profile__add-button');
 const popupAddCard = document.querySelector('.popup_card');
+const popupAddCardOverlay = popupAddCard.querySelector('.popup__overlay');
 const cardPopupButtonClose = popupAddCard.querySelector('.popup__close-button');
 const cardFormAdd = popupAddCard.querySelector('form');
 const fullscreenPicPopup = document.querySelector('.popup_pic');
 const fullscreenPicPopupClose = fullscreenPicPopup.querySelector('.popup__close-button');
+const fullscreenOverlay = fullscreenPicPopup.querySelector('.popup__overlay');
 const popupCardPic = fullscreenPicPopup.querySelector('.popup__pic-style');
 const popupCardTitle = fullscreenPicPopup.querySelector('.popup__pic-heading');
 const nameInput = document.getElementById("name");
@@ -119,6 +122,10 @@ popupCloseButton.addEventListener('click', function () {
   closePopup(popupProfile)
 });
 
+popupProfileOverlay.addEventListener('click', function () {
+  closePopup(popupProfile);
+});
+
 profileAddButton.addEventListener('click', function () {
   openPopup(popupAddCard)
 });
@@ -127,10 +134,28 @@ cardPopupButtonClose.addEventListener('click', function () {
   closePopup(popupAddCard)
 });
 
+popupAddCardOverlay.addEventListener('click', function () {
+  closePopup(popupAddCard);
+});
+
 fullscreenPicPopupClose.addEventListener('click', function () {
   closePopup(fullscreenPicPopup)
 });
 
+fullscreenOverlay.addEventListener('click', function () {
+  closePopup(fullscreenPicPopup);
+});
+
+
+document.addEventListener('keyup', function (event) {
+  const isESC = event.code === 'Escape';
+
+  if (isESC) {
+    closePopup(popupAddCard);
+    closePopup(fullscreenPicPopup);
+    closePopup(popupProfile);
+  }
+});
+
 profileForm.addEventListener('submit', handleProfileForm);
 cardFormAdd.addEventListener('submit', handlecardFormAdd);
-

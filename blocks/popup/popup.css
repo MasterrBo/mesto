@@ -4,13 +4,12 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
   /* display: none; */
   overflow: auto;
   justify-content: center;
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.2s linear;
+  transition: opacity 0.2s linear;
   z-index: 1;
 }

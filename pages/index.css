@@ -36,12 +36,14 @@
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__overlay/popup__overlay.css);
 @import url(../blocks/popup/_pic/popup_pic.css);
 @import url(../blocks/popup/__wrap/popup__wrap.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__field/popup__field.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__save/popup__save.css);
+@import url(../blocks/popup/__save/__save_disabled/popup__save_disabled.css);
 @import url(../blocks/popup/__submit-button/popup__submit-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
@@ -51,46 +53,5 @@
 @import url(../blocks/popup/__pic-content/popup__pic-content.css);
 @import url(../blocks/popup/__pic-heading/popup__pic-heading.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
-
-.error-message {
- color: #FF0000;
- font-weight: 400;
- font-style: normal;
- font-size: 12px;
- line-height: 15px;
- padding: 0;
- margin: 0;
-}
-
-.text-begin {
-  color: #C4C4C4;
- }
- 
-.popup-no-active {
-  background-color: #FFFFFF;
-  color: #C4C4C4;
-}
-
-.popup__save_disabled {
-  background-color: #f1f1f1;
-  cursor: default;
-}
-
-.popup__save_disabled:hover {
-  background-color: #f1f1f1;
-  cursor: default;
-}
-
-.popup__field:invalid {
-  /* border-bottom: 1px solid #FF0000;  */
-}
-
-.input__text_type_error {
-  border-color: #FF0000;
-}
-
-.form__input-error_active {
-  opacity: 1;
-}
-
-
+@import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/__error-message/popup__error-message.css);

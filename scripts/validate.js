@@ -1,51 +1,84 @@
-//Объект для запуска валидации формы (с несколькими ключами)
-
-const obj = {
+const formData = {
   formSelector: '.popup__container',
   inputSelector: '.popup__field',
-  submitButtonSelector: '.popup__save',
-  errorClass: '.error-message'
+  submitButtonSelector: ".popup__save_action",
+  errorClass: '.popup__error-message',
+  inactiveButtonClass: 'popup__save_disabled',
+  inputErrorClass: 'popup__input-error'
+};
 
-  // inactiveButtonClass: 'popup__button_disabled',
-  // inputErrorClass: 'popup__input_type_error'
+const showError = (form, input, errorMessage, formData) => {
+  const errorElement = form.querySelector(`#${input.id}-error`);
+  input.classList.add(formData.inputErrorClass);
+  errorElement.textContent = errorMessage;
 }
 
-enableValidation(obj);
+const hideError = (form, input, formData) => {
+  const errorElement = form.querySelector(`#${input.id}-error`);
+  input.classList.remove(formData.inputErrorClass);
+  errorElement.textContent = '';
+};
 
-function enableValidation({formSelector, inputSelector, submitButtonSelector, errorClass}) {
-//Наша логика (запуск процесса наложения валидации)
-// 1. Запускаем enableValidation, получаем в него объект.
-// 2. На основе этого объекта накладываем валидацию на все инпуты внутри всех форм.
-// 3, Следовательно сначала надо найти все формы.
+const checkInputValidity = (form, input, formData) => {
+  const isInputNotValid  = !input.validity.valid;
 
-    // Ищем все формы
-    const forms = Array.from(document.querySelectorAll(formSelector));
-    forms.forEach(form => {
-    // Прописать обработчик для каждой формы, чтобы она не сабмитилась
-    form.addEventListener('submit', evt =>  evt.preventDefault());
+  if(isInputNotValid) {
+    const errorMessage = input.validationMessage;
 
-    // Находим все инпуты
-    // Действие наложения обработчиков на поля форм
-    const inputs = form.querySelectorAll(inputSelector);
-    inputs.forEach(input => {
-     input.addEventListener('input', evt => {
-    // Проверка валидности введенных данных
-
-    console.log(input.validity); 
-    // console.log(input.validitationMessage);  не работает!
-
-    if (input.validity.valid) {
-      //** Скрыть ошибки под полем
- 
+    showError(form, input, errorMessage, formData);
   } else {
-     //** Показать ошибки под полем
-     const inputName = input.getAttribute('name');
-     const errorMessage = document.getElementById(`${inputName}-error`);
-     console.log(errorMessage);
-       }
-     })
-    }) 
+    hideError(form, input, formData);
+  }
+};
 
- })
-}
- 
+// Дизеблим кнопку если форма невалидна
+const toggleButtonState = (inputList, submitButtonElement, formData) => {
+    //если хотя бы один инпут невадиный - кнопке добавлялем класс с серым цветом и устанавливаем атрибут disabled
+    const inputElements = Array.from(inputList);
+    const hasInvalidInput = inputElements.some((inputElement) => {
+      return !inputElement.validity.valid;
+    });
+
+  if (hasInvalidInput) {
+    submitButtonElement.classList.add(formData.inactiveButtonClass);
+
+    submitButtonElement.setAttribute('disabled', true);
+
+  // А иначе убираем класс серой кноки и убираем атрибут disabled
+  } else {
+    submitButtonElement.classList.remove(formData.inactiveButtonClass);
+    submitButtonElement.removeAttribute('disabled');
+  }
+};
+
+const setEventListeners = (form, formData) => {
+  const inputList = form.querySelectorAll(formData.inputSelector);
+  const submitButtonElement = form.querySelector(formData.submitButtonSelector);
+
+  const inputListIterator = (input) => {
+    const handleInput = () => {
+      // Проверяем на валидность форму и переключаем ее активность
+      checkInputValidity(form, input, formData);
+      toggleButtonState(inputList, submitButtonElement, formData);
+    };
+
+    input.addEventListener('input', handleInput);
+  };
+
+  // Проверяем при загрузке формы валидны ли наши поля
+  // toggleButtonState(inputList, submitButtonElement);  - не работает!
+
+  inputList.forEach(inputListIterator);
+};
+
+const enableValidation = (formData) => {
+  const forms = document.querySelectorAll(formData.formSelector);
+
+  const formListIterator = (form) => {
+    setEventListeners(form, formData);
+  };
+
+  forms.forEach(formListIterator);
+};
+
+enableValidation(formData);
