@@ -51,27 +51,27 @@
             <h3 class="popup__title">Редактировать профиль</h3>
 
             <input type="text" name="yourname" class="popup__field" id="name" required minlength="2" maxlength="40" value="" required placeholder="Введите имя" />
-            <span id="error-name" class="error-message error-message_visible error-message_type_username"></span>
+            <span id="name-error" class="error-message error-message_visible error-message_type_username"></span>
 
             <input type="text" name="yourjob" class="popup__field" id="job" required minlength="2" maxlength="200" value="" required placeholder="Введите профессию" />
-            <span id="error-job" class="error-message error-message_visible error-message error-message_type_username"></span>
+            <span id="job-error" class="error-message error-message_visible error-message error-message_type_username"></span>
 
-            <button type="submit" class="popup__save popup__save_action popup__save_disabled" aria-label="Сохранить">Сохранить</button>
+            <button type="submit" class="popup__save popup__save_action" aria-label="Сохранить">Сохранить</button>
           </form>
         </div>
       </section>
-
+ 
       <!-- форма 2 Добавить карточку -->
-      <section class="popup popup_card" id="popup__add-card" novalidate>
+      <section class="popup popup_card" id="popup__add-card">
         <div class="popup__wrap">
           <button type="button" class="popup__close-button" aria-label="Закрыть">
             <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
           </button>
 
-          <form name="form2" class="popup__container popup__container_addcard">
+          <form name="form2" class="popup__container popup__container_addcard" novalidate>
             <h3 class="popup__title">Новое место</h3>
 
-            <input type="text" id="photo" name="yourplace" class="popup__field popup__field_name"  required value="" placeholder="Название" minlength="2"/>
+            <input type="text" id="photo" name="yourplace" class="popup__field popup__field_name" required value="" placeholder="Название" minlength="2"/>
             <span id="error-photo" class="error-message error-message_visible error-message_type_username"></span>
 
             <input type="url" class="popup__field popup__field_link" id="link" required value="" placeholder="Ссылка на картинку" />
@@ -113,6 +113,7 @@
     </template>
 
     <script src="scripts/index.js"></script>
-    <script src="scripts/validate.js"></script>
+    <!-- <script src="scripts/validate.js"></script> -->
+    <script src="scripts/validate-2.js"></script>
   </body>
 </html>

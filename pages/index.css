@@ -89,4 +89,8 @@
   border-color: #FF0000;
 }
 
+.form__input-error_active {
+  opacity: 1;
+}
+
 
