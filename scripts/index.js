@@ -111,9 +111,12 @@ function handlecardFormAdd(evt) {
   evt.preventDefault();
 
   addCard(renderItem(linkInput.value, photoInput.value));
-    // Очистить форму после добавления карточки в контейнер
-  cardFormAdd.reset();
   closePopup(popupAddCard);
+  
+// Очистить форму после добавления карточки в контейнер и заблокировать кнопку Сохранить
+  cardFormAdd.reset();
+  popupAddCardSubmit.setAttribute('disabled', true);
+  popupAddCardSubmit.classList.add('popup__save_disabled');
 }
 
 profileEditButton.addEventListener('click', function () {
