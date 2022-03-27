@@ -92,10 +92,12 @@ function addCard(newItem) {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', pressESC);
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', pressESC);
 }
 
 function handleProfileForm(evt) {
@@ -109,6 +111,8 @@ function handlecardFormAdd(evt) {
   evt.preventDefault();
 
   addCard(renderItem(linkInput.value, photoInput.value));
+    // Очистить форму после добавления карточки в контейнер
+  cardFormAdd.reset();
   closePopup(popupAddCard);
 }
 
@@ -146,14 +150,14 @@ fullscreenOverlay.addEventListener('click', function () {
   closePopup(fullscreenPicPopup);
 });
 
-
 document.addEventListener('keyup', function (event) {
   const isESC = event.code === 'Escape';
 
+  // добавляем константу popupActive и выносим в нее открытый попап
+  const popupActive = document.querySelector('.popup_opened');
+
   if (isESC) {
-    closePopup(popupAddCard);
-    closePopup(fullscreenPicPopup);
-    closePopup(popupProfile);
+    closePopup(popupActive);
   }
 });
 
