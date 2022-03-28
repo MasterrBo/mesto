@@ -112,11 +112,7 @@ function handlecardFormAdd(evt) {
 
   addCard(renderItem(linkInput.value, photoInput.value));
   closePopup(popupAddCard);
-  
-// Очистить форму после добавления карточки в контейнер и заблокировать кнопку Сохранить
   cardFormAdd.reset();
-  popupAddCardSubmit.setAttribute('disabled', true);
-  popupAddCardSubmit.classList.add('popup__save_disabled');
 }
 
 profileEditButton.addEventListener('click', function () {
@@ -153,16 +149,14 @@ fullscreenOverlay.addEventListener('click', function () {
   closePopup(fullscreenPicPopup);
 });
 
-document.addEventListener('keyup', function (event) {
+function pressESC(event) {
   const isESC = event.code === 'Escape';
-
-  // добавляем константу popupActive и выносим в нее открытый попап
   const popupActive = document.querySelector('.popup_opened');
 
   if (isESC) {
     closePopup(popupActive);
   }
-});
+}
 
 profileForm.addEventListener('submit', handleProfileForm);
 cardFormAdd.addEventListener('submit', handlecardFormAdd);
