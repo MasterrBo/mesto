@@ -22,6 +22,7 @@ const jobInput = document.getElementById("job");
 const template = document.querySelector('#card-template').content;
 const photoInput = document.getElementById("photo");
 const linkInput = document.getElementById("link");
+const popupAddCardSubmit = popupAddCard.querySelector('.popup__save');
 
 // Делаем вывод карточек через JS
 
@@ -113,6 +114,10 @@ function handlecardFormAdd(evt) {
   addCard(renderItem(linkInput.value, photoInput.value));
   closePopup(popupAddCard);
   cardFormAdd.reset();
+
+  popupAddCardSubmit.setAttribute('disabled', true);
+  popupAddCardSubmit.classList.add('popup__save_disabled');
+
 }
 
 profileEditButton.addEventListener('click', function () {
