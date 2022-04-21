@@ -80,15 +80,18 @@ function handleProfileForm(evt) {
 
 function handlecardFormAdd(evt) {
   evt.preventDefault();
-
-  const card = new Card(photoInput.value, linkInput.value, template);
-  addCard(card.readyCard());
+  
+  addCard(createCard(photoInput.value, linkInput.value, template));
 
   closePopup(popupAddCard);
   cardFormAdd.reset();
 
-  popupAddCardSubmit.setAttribute('disabled', true);
-  popupAddCardSubmit.classList.add('popup__save_disabled');
+  formValidator.disabledButton();
+}
+
+function createCard(photoInput, linkInput, template) {
+  const card = new Card(photoInput, linkInput, template);
+  return card.readyCard();
 }
 
 profileEditButton.addEventListener('click', function () {
@@ -109,11 +112,37 @@ cardPopupButtonClose.addEventListener('click', function () {
   closePopup(popupAddCard)
 });
 
+popupProfileOverlay.addEventListener('click', function() {
+  closePopup(popupProfile);
+});
+
+popupAddCardOverlay.addEventListener('click', function() {
+  closePopup(popupAddCard);
+});
+
+fullscreenPicPopupClose.addEventListener('click', function() {
+  closePicPopup(fullscreenPicPopup);
+});
+
+fullscreenOverlay.addEventListener('click', function() {
+  closePicPopup(fullscreenPicPopup);
+});
+
+export const openPicPopup = (popup) => {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', pressESC);
+}
+
+export const closePicPopup = (popup) => {
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', pressESC);
+}
+
 function pressESC(event) {
   const isESC = event.code === 'Escape';
-  const popupActive = document.querySelector('.popup_opened');
 
   if (isESC) {
+    const popupActive = document.querySelector('.popup_opened');
     closePopup(popupActive);
   }
 }
@@ -122,8 +151,7 @@ profileForm.addEventListener('submit', handleProfileForm);
 cardFormAdd.addEventListener('submit', handlecardFormAdd);
 
 cardsInitial.forEach(el => {
-  const card = new Card(el.name, el.link, template);
-  addCard(card.readyCard());
+  addCard(createCard(el.name, el.link, template));
 });
 
 // Валидация

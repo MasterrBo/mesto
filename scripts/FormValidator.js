@@ -54,21 +54,28 @@ export default class FormValidator {
 
   _toggleButtonState = () => {
     //если хотя бы один инпут невадиный - кнопке добавлялем класс с серым цветом и устанавливаем атрибут disabled
-    const inputElements = Array.from(this._inputs);
-    const hasInvalidInput = inputElements.some((inputElement) => {
+    const hasInvalidInput = Array.from(this._inputs).some((inputElement) => {
       return !inputElement.validity.valid;
     });
 
     if (hasInvalidInput) {
-      this._submitButton.classList.add(this._formData.inactiveButtonClass);
-      this._submitButton.setAttribute('disabled', true);
+      this.disabledButton();
 
     // А иначе убираем класс серой кноки и убираем атрибут disabled
     } else {
-      this._submitButton.classList.remove(this._formData.inactiveButtonClass);
-      this._submitButton.removeAttribute('disabled');
+      this.enabledButton();
     }
   };
+
+  disabledButton = () => {
+    this._submitButton.classList.add(this._formData.inactiveButtonClass);
+    this._submitButton.setAttribute('disabled', true);
+  }
+
+  enabledButton = () => {
+    this._submitButton.classList.remove(this._formData.inactiveButtonClass);
+    this._submitButton.removeAttribute('disabled');
+  }
 
   enableValidation = () => {
     this._setEventListeners();
