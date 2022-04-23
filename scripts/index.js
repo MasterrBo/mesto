@@ -165,8 +165,8 @@ const formData = {
   inputErrorClass: 'popup__input-error'
 };
 
-const formValidatorProfile = new FormValidator(formData, cardFormAdd);
+const formValidatorProfile = new FormValidator(formData, profileForm);
 formValidatorProfile.enableValidation();
 
-const formValidatorCard = new FormValidator(formData, profileForm);
+const formValidatorCard = new FormValidator(formData, cardFormAdd);
 formValidatorCard.enableValidation();
