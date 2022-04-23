@@ -86,7 +86,7 @@ function handlecardFormAdd(evt) {
   closePopup(popupAddCard);
   cardFormAdd.reset();
 
-  formValidator.disabledButton();
+  formValidatorCard.disabledButton();
 }
 
 function createCard(photoInput, linkInput, template) {
@@ -165,15 +165,10 @@ const formData = {
   inputErrorClass: 'popup__input-error'
 };
 
-const enableValidation = (formData) => {
-  const forms = document.querySelectorAll(formData.formSelector);
+const formCard = document.querySelector('.form-profile');
+const formValidatorProfile = new FormValidator(formData, formCard);
+formValidatorProfile.enableValidation();
 
-  const formListIterator = (form) => {
-    const formValidator = new FormValidator(formData, form);
-    formValidator.enableValidation();
-  };
-
-  forms.forEach(formListIterator);
-};
-
-enableValidation(formData);
+const formProfile = document.querySelector('.form-card')
+const formValidatorCard = new FormValidator(formData, formProfile);
+formValidatorCard.enableValidation();
