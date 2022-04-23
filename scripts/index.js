@@ -165,10 +165,8 @@ const formData = {
   inputErrorClass: 'popup__input-error'
 };
 
-const formCard = document.querySelector('.form-profile');
-const formValidatorProfile = new FormValidator(formData, formCard);
+const formValidatorProfile = new FormValidator(formData, cardFormAdd);
 formValidatorProfile.enableValidation();
 
-const formProfile = document.querySelector('.form-card')
-const formValidatorCard = new FormValidator(formData, formProfile);
+const formValidatorCard = new FormValidator(formData, profileForm);
 formValidatorCard.enableValidation();
