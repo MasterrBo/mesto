@@ -1,0 +1,19 @@
+{
+  "name": "yandex_praktikum",
+  "version": "0.0.1",
+  "description": "Student examination project №4. Studying web development in Yandex. The service with your own card of travelling. Using flex, adaptive layout and JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MasterrBo/mesto.git"
+  },
+  "author": "Stas Basov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MasterrBo/mesto/issues"
+  },
+  "homepage": "https://github.com/MasterrBo/mesto#readme"
+}
