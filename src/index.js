@@ -24,8 +24,35 @@ const photoInput = document.getElementById("photo");
 const linkInput = document.getElementById("link");
 const popupAddCardSubmit = popupAddCard.querySelector('.popup__save');
 
-import Card from "./Card.js";
-import FormValidator from "./FormValidator.js";
+import Card from "./components/Card";
+import FormValidator from "./components/FormValidator";
+import "./pages/index.css"; // добавьте импорт главного файла стилей 
+
+// импортируем изображения
+// import close_icon from './images/close-icon.svg';
+// import logo from './images/logo.svg';
+// import dombay from './images/dombay.png';
+// import elbrus from './images/elbrus.png';
+// import karachaevo_ch from './images/karachaevo-ch.png';
+// import karachaevsk from './images/karachaevsk.png';
+// import kusto from './images/kusto.png';
+// import add_button from './image/add-button.svg';
+// import Edit_Button from './image/Edit_Button.svg';
+// import trash2 from './image/trash2.svg';
+
+// const images = [
+//   // меняем исходные пути на переменные
+//   { name: 'close-icon', image: close_icon },
+//   { name: 'logo', link: logo },
+//   { name: 'dombay', link: dombay },
+//   { name: 'elbrus', link: elbrus },
+//   { name: 'karachaevo-ch', link: karachaevo_ch },
+//   { name: 'karachaevsk', link: karachaevsk },
+//   { name: 'kusto', link: kusto },
+//   { name: 'add-button', link: add_button },
+//   { name: 'Edit_Button', link: Edit_Button },
+//   { name: 'trash2', link: trash2 },
+// ]; 
 
 // Массив карточек
 

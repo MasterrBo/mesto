@@ -3,31 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="pages/index.css" />
     <title>Интерактивный сайт в честь Жак-Ив Кусто</title>
   </head>
   <body class="big-page">
     <div class="page">
       <header class="header">
-        <a href="#" class="header__logo-link"><img class="header__logo" src="./images/logo.svg" alt="Логотип" /></a>
+        <a href="#" class="header__logo-link"><img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип" /></a>
       </header>
 
       <main class="content">
         <section class="profile">
-          <img src="./images/kusto.png" class="profile__avatar" alt="Ваше фото" />
+          <img src="<%=require('./images/kusto.png')%>" class="profile__avatar" alt="Ваше фото" />
 
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title profile__title_item">Жак-Ив Кусто</h1>
               <button type="button" aria-label="Редактировать" class="profile__edit-button">
-                <img class="profile__edit-icon" src="./images/Edit_Button.svg" alt="Редактировать карточку" />
+                <img class="profile__edit-icon" src="<%=require('./images/Edit_Button.svg')%>" alt="Редактировать карточку" />
+
               </button>
             </div>
             <p class="profile__post">Исследователь океана</p>
           </div>
 
           <button type="button" class="profile__add-button" aria-label="Добавить">
-            <img class="profile__add-icon" src="./images/add-button.svg" alt="Добавить инфо" />
+            <img class="profile__add-icon" src="<%=require('./images/add-button.svg')%>" alt="Добавить инфо" />
           </button>
         </section>
 
@@ -45,7 +45,7 @@
         <div class="popup__overlay"></div>
         <div class="popup__wrap">
           <button type="button" class="popup__close-button" aria-label="Закрыть">
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
+            <img class="popup__close-icon" src="<%=require('./images/close-icon.svg')%>" alt="Закрыть форму" />
           </button>
 
           <form name="form1" class="popup__container form-profile" novalidate>
@@ -67,7 +67,7 @@
         <div class="popup__overlay"></div>
         <div class="popup__wrap">
           <button type="button" class="popup__close-button" aria-label="Закрыть">
-            <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
+            <img class="popup__close-icon" src="<%=require('./images/close-icon.svg')%>" alt="Закрыть форму" />
           </button>
 
           <form name="form2" class="popup__container popup__container_addcard form-card" novalidate>
@@ -90,9 +90,10 @@
         <div class="popup__pic-wrap">
           <span class="popup__pic-content">
             <button type="button" class="popup__close-button popup__close-button_form" aria-label="Закрыть">
-              <img class="popup__close-icon" src="./images/close-icon.svg" alt="Закрыть форму" />
+              <img class="popup__close-icon" src="<%=require('./images/close-icon.svg')%>" alt="Закрыть форму" />
             </button>
-            <img class="popup__pic-style" src="." />
+            <img class="popup__pic-style" src="<%=require('.')%>" />
+            
             <h3 class="popup__pic-heading"></h3>
           </span>
         </div>
@@ -104,9 +105,10 @@
       <article class="element">
         <!-- Добавляем иконку корзины-->
         <button type="button" class="element__delete-button" aria-label="Удалить">
-          <img class="element__delete-icon" src="./images/trash2.svg" alt="Иконка удаления" />
+          <img class="element__delete-icon" src="<%=require('./images/trash2.svg')%>" alt="Иконка удаления" />
+
         </button>
-        <img class="element__photo" src="." alt=""/>
+        <img class="element__photo" src="<%=require('.')%>" alt=""/>
 
         <div class="element__content">
           <h2 class="element__title"></h2>
@@ -114,7 +116,5 @@
         </div>
       </article>
     </template>
-
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

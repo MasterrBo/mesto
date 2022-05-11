@@ -2,7 +2,7 @@
 //Создайте класс Card, который создаёт карточку с текстом и ссылкой на изображение
 
 // 1. Принимает в конструктор её данные и селектор её template-элемента;
-import {openPicPopup, closePicPopup} from './index.js';
+import {openPicPopup, closePicPopup} from '../index';
 
 export default class Card {
   constructor(name, link, template, handleCardClick) {
