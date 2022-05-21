@@ -1,75 +1,47 @@
-// ПР-7 ИНКАПСУЛЯЦИЯ
-//Создайте класс Card, который создаёт карточку с текстом и ссылкой на изображение
-
-// 1. Принимает в конструктор её данные и селектор её template-элемента;
-import {openPicPopup, closePicPopup} from '../index';
-
 export default class Card {
-  constructor(name, link, template, handleCardClick) {
-    this._name = name;
-    this._link = link;
-    this._template = template;
-    this._handleCardClick = handleCardClick;
-
-    // Попап 
-   this._initPopup();
+  constructor(elementCard, templateCard, functionCardClick) {
+    this._elementCardName = elementCard.name;
+    this._elementCardLink = elementCard.link;
+    this._templateCard = templateCard.querySelector('.element');
+    this._functionCardClick = functionCardClick;
   }
 
-  _initPopup = () => {
-    this._fullscreenPicPopup = document.querySelector('.popup_pic');
-    this._popupCardPic = this._fullscreenPicPopup.querySelector('.popup__pic-style');
-    this._popupCardTitle = this._fullscreenPicPopup.querySelector('.popup__pic-heading');
+  _createView = () => {
+    this._templateView = this._templateCard.cloneNode(true);
   }
 
-  _createCard = () => {
-    this._card = this._template.querySelector('.element').cloneNode(true);
-    this._card.querySelector('.element__title').textContent = this._name;
-    this._likeButton = this._card.querySelector('.element__button');
-    this._removeButton = this._card.querySelector('.element__delete-button');
-    this._cardPic = this._card.querySelector('.element__photo');
-    this._cardPic.src = this._link;
-    this._cardPic.alt = this._name;
+  _removeItem = () => {
+    this._templateView.remove();
+  }
 
-    this._listeners();
+  _isLike = (event) => {
+    this._cardLikedActive = 'element__button_active';
+
+    event.target.classList.toggle(this._cardLikedActive);
+  }
+
+  _addEventListeners = () => {
+    this._cardRemove = this._templateView.querySelector('.element__delete-button');
+    this._cardLiked = this._templateView.querySelector('.element__button');
     
-    return this._card;
+    this._cardRemove.addEventListener('click', () => this._removeItem());
+    this._cardLiked.addEventListener('click', (event) => this._isLike(event));
+
+    this._cardImg.addEventListener('click', () => this._functionCardClick(this._elementCardName, this._elementCardLink));
   }
 
-  _listeners = () => {    
-    this._likeButton.addEventListener('click', this._handleLike);
-    this._removeButton.addEventListener('click', this._removeCard);
-    this._cardPic.addEventListener('click', this._handleCardClick);
-  }
+  createCard = () => {
+    this._createView()
 
-  _fullscreenImage = () => {
-    this._popupCardPic.src = this._link;
-    this._popupCardPic.alt = this._name;
-    this._popupCardTitle.textContent = this._name;
-    openPicPopup(this._fullscreenPicPopup);
-  }
+    this._cardTitle = this._templateView.querySelector('.element__title');
+    this._cardImg = this._templateView.querySelector('.element__photo');
 
-  _handleLike = (event) => {
-    event.target.classList.toggle("element__button_active");
-  }
+    this._cardTitle.textContent = this._elementCardName;
+    this._cardImg.src = this._elementCardLink;
+    this._cardImg.alt = this._elementCardName;
 
-  _destroy = () => {
-    this._likeButton.removeEventListener('click', this._handleLike);
-    this._removeButton.removeEventListener('click', this._removeCard);
-  }
-
-  _removeCard = () => {
-    this._destroy();
-    this._card.remove();
-  }
-
-  // здесь выполним все необходимые операции, чтобы вернуть разметку
-
-  readyCard = () => {
-    return this._createCard();
+    this._addEventListeners();
+    
+    return this._templateView;
   }
 }
-
-
-// Свяжите класс Card c попапом. 
-// Сделайте так, чтобы Card принимал в конструктор функцию handleCardClick. Эта функция должна открывать попап с картинкой при клике на карточку.
-

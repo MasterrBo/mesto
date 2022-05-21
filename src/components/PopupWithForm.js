@@ -1,35 +1,32 @@
-import Popup from "./Popup";
+import Popup from './Popup.js'
 
 export default class PopupWithForm extends Popup {
-    constructor(popup, callback) {
-        this._popup = popup;
-        this._form = popup.querySelector('.popup__container');
-        this._inputs = popup.querySelectorAll('.popup__field');
-        this._submit = callback;
+    constructor({ selectorPopup, functionPopupForm: handleFormSubmit }) {
+      super({ selectorPopup });
+      this._handleFormSubmit = handleFormSubmit;
+      this._popupForm = this._selectorPopup.querySelector('.popup__container');
+      this._inputList = this._popupForm.querySelectorAll('.popup__field');
     }
 
-    _getInputValues = () => {
-        this._values = {};
-        this._inputs.forEach(input => {
-            this._values[input.name] = input.value;
-        });
+    _getInputValues() {
+      this._formValues = {}
+      this._inputList.forEach(input => {
+        this._formValues[input.name] = input.value;
+      })
+      return this._formValues;
     }
 
-    setEventListeners = () => {
-        super.setEventListeners();
-        //  Метод _setEventListeners класса PopupWithForm  но и добавлять обработчик сабмита формы.
-
-        this._form.addEventListener('submit', event => {
-            event.preventDefault();
-            this._submit();
-            // добавлять обработчик сабмита форм - что передать?
-        })
+    setEventListeners() {
+      super.setEventListeners()
+      this._popupForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        this._handleFormSubmit(this._getInputValues());
+        this.close()
+      })
     }
 
-    close = () => {
+    close() {
         super.close();
-        // Перезаписывает родительский метод close, так как при закрытии попапа форма должна ещё и сбрасываться.
-        this._form.reset();
+        this._popupForm.reset();
     }
 }
-
