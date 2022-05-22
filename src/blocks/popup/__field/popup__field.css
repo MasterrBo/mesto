@@ -10,9 +10,8 @@
   letter-spacing: 0em;
   font-style: normal;
   color: #000;
-  /* margin-top: 30px; */
-  margin-top: 10px;
-  margin-bottom: 7px;
+  margin-top: 25px;
+  margin-bottom: 5px;
 }
 
 @media screen and (max-width: 490px) {
@@ -28,7 +27,13 @@
   color: rgba(0,0,0,0.2);
 }
 
-/* .popup__field_link {
+.popup__field_link {
   margin-top: 0;
-  padding-top: 10px;
-} */
+  margin-bottom: 7px;
+}
+
+.popup__field-job {
+  margin-top: 5px;
+}
+
+
