@@ -1,5 +1,6 @@
 .popup__save {
-  margin: 42px 0 0;
+  /* margin: 42px 0 0; */
+  margin: 10px 0 0;
   border: none;
   min-width: 358px;
   height: 50px;

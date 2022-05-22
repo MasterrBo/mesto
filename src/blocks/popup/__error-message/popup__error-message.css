@@ -5,6 +5,15 @@
  font-style: normal;
  font-size: 12px;
  line-height: 15px;
- padding: 0;
+ padding: 10px 0 0 0;
+ /* padding: 0; */
  margin: 0;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+}
+
+.input__wrap {
+  position: relative;
+  padding-bottom: 25px;
 }

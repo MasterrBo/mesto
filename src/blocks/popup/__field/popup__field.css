@@ -10,8 +10,9 @@
   letter-spacing: 0em;
   font-style: normal;
   color: #000;
-  margin-top: 30px;
-  margin-bottom: 5px;
+  /* margin-top: 30px; */
+  margin-top: 10px;
+  margin-bottom: 7px;
 }
 
 @media screen and (max-width: 490px) {
@@ -24,5 +25,10 @@
 .popup__field::placeholder {
   font-family: "Inter";
   font-weight: normal;
-  color: #000000;
+  color: rgba(0,0,0,0.2);
 }
+
+/* .popup__field_link {
+  margin-top: 0;
+  padding-top: 10px;
+} */

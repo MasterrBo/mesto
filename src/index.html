@@ -73,13 +73,17 @@
           <form name="form2" class="popup__container popup__container_addcard form-card" novalidate>
             <h3 class="popup__title">Новое место</h3>
 
-            <input type="text" id="photo" name="yourplace" class="popup__field popup__field_name" required value="" placeholder="Название" minlength="2"/>
-            <span id="photo-error" class="popup__error-message"></span>
+            <div class="input__wrap">
+              <input type="text" id="photo" name="yourplace" class="popup__field popup__field_name" required value="" placeholder="Название" minlength="2"/>
+              <span id="photo-error" class="popup__error-message"></span>
+            </div>
 
-            <input type="url" id="link"  name="yoururl" class="popup__field popup__field_link" required value="" placeholder="Ссылка на картинку" />
-            <span id="link-error" class="popup__error-message"></span>
+            <div class="input__wrap">
+              <input type="url" id="link"  name="yoururl" class="popup__field popup__field_link" required value="" placeholder="Ссылка на картинку" />
+              <span id="link-error" class="popup__error-message"></span>
+            </div>
             
-            <button type="submit" class="popup__save popup__save_action popup__save_disabled" disabled aria-label="Сохранить">Сохранить</button>
+            <button type="submit" class="popup__save popup__save_action popup__save_disabled" disabled aria-label="Сохранить">Создать</button>
           </form>
         </div>
       </section>
