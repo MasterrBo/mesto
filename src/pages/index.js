@@ -17,8 +17,6 @@ import {
   inputCardName,
   inputCardUrl,
   addCardForm,
-  imgUrl,
-  imgName,
   editProfile,
   nameInput,
   jobInput,
@@ -31,7 +29,7 @@ const formValidCard = new FormValidator(formData, addCardForm);
 
 const userData = new UserInfo({ name: '.profile__title', info: '.profile__post' });
 
-function cardCreate(item) {
+function createCard(item) {
   const cardItem = new Card(item, template, handleCardClick);
   return cardItem.createCard();
 }
@@ -40,17 +38,17 @@ function cardCreate(item) {
 const cardSection = new Section({
       items: initialCards,
       renderer: (item) => {
-        cardSection.addItem(cardCreate(item))
+        cardSection.addItem(createCard(item))
       },
     },
     '.elements');
 
 // константы под классов popup'а
-const popupCardImg = new PopupWithImage({ selectorPopup: '.popup_pic' }, imgUrl, imgName);
+const popupCardImg = new PopupWithImage({ selectorPopup: '.popup_pic' });
 const popupCardAdd = new PopupWithForm({
   selectorPopup: '.popup_card',
   functionPopupForm: (data) => {
-    cardSection.addItem(cardCreate({ name: data['yourplace'], link: data['yoururl'] }))
+    cardSection.addItem(createCard({ name: data['yourplace'], link: data['yoururl'] }))
   }
 });
 
@@ -63,10 +61,8 @@ const popupProfileEdit = new PopupWithForm({
 /* Function */
 // открывает popup'а 'создание новой карточки'
 function openPopupCard() {
+  formValidCard.resetValidation();
   popupCardAdd.open()
-  inputCardName.value = ''
-  inputCardUrl.value = ''
-  formValidCard.resetValidation()
 }
 
 // открывает popup карточки
@@ -76,11 +72,11 @@ function handleCardClick(name, link) {
 
 // Профайл
 function openPopupProfile() {
-  popupProfileEdit.open();
   const newUserData = userData.getUserInfo();
   nameInput.value = newUserData.name;
   jobInput.value = newUserData.info;
   formValidProfile.resetValidation();
+  popupProfileEdit.open();
 }
 
 /* Запуск функций */

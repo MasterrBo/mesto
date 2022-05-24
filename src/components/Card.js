@@ -1,13 +1,14 @@
 export default class Card {
-  constructor(elementCard, templateCard, functionCardClick) {
+  constructor(elementCard, selectorCard, functionCardClick) {
     this._elementCardName = elementCard.name;
     this._elementCardLink = elementCard.link;
-    this._templateCard = templateCard.querySelector('.element');
+    this._templateCard = document.querySelector('#card-template').content;
+    this._templateCardElement = this._templateCard.querySelector('.element');
     this._functionCardClick = functionCardClick;
   }
 
   _createView = () => {
-    this._templateView = this._templateCard.cloneNode(true);
+    this._templateView = this._templateCardElement.cloneNode(true);
   }
 
   _removeItem = () => {

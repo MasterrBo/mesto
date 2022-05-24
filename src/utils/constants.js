@@ -37,25 +37,20 @@ export const formData = {
   inputErrorClass: 'popup__input-error'
 };
 
-export const elements = document.querySelector('.elements'); //+
-export const template = document.querySelector('#card-template').content; //+
+export const elements = document.querySelector('.elements');
+export const template = '#card-template';
 
 // Для popup'а добавления карточки
 export const addButton = document.querySelector('.profile__add-button');//+
 
-export const popupAddCard = document.querySelector('.popup_card'); //+
-export const inputCardName = popupAddCard.querySelector('.popup__field_name'); //+
-export const inputCardUrl = popupAddCard.querySelector('.popup__field_link'); //+
-export const addCardForm = popupAddCard.querySelector('form'); //+
-
-// Для popup'a открытой карточки
-export const popupImage = document.querySelector('.popup_pic'); //+
-export const imgUrl = document.querySelector('.popup__pic-style'); //+
-export const imgName = document.querySelector('.popup__pic-heading'); //+
+export const popupAddCard = document.querySelector('.popup_card');
+export const inputCardName = popupAddCard.querySelector('.popup__field_name');
+export const inputCardUrl = popupAddCard.querySelector('.popup__field_link');
+export const addCardForm = popupAddCard.querySelector('form');
 
 // Для popup'a профайла
-export const popupProfile = document.querySelector(".popup_profile"); //+
-export const editProfile = document.querySelector('.profile__edit-button'); //+
-export const nameInput = document.querySelector('.popup__field-name'); //+
-export const jobInput = document.querySelector('.popup__field-job'); //+
-export const profileForm = popupProfile.querySelector('.popup__container'); //+
+export const popupProfile = document.querySelector(".popup_profile");
+export const editProfile = document.querySelector('.profile__edit-button');
+export const nameInput = document.querySelector('.popup__field-name');
+export const jobInput = document.querySelector('.popup__field-job'); 
+export const profileForm = popupProfile.querySelector('.popup__container');
